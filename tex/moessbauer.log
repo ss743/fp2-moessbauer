@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.12.26)  20 FEB 2017 15:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.12.26)  21 FEB 2017 14:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2232,6 +2232,43 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language append on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language append on input line 1.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 3.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 3.
+
+
+LaTeX Warning: File `figures/compton-untergrund.png' not found on input line 4.
+
+
+
+! Package pdftex.def Error: File `figures/compton-untergrund.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 ...cke zur Bestimmung des Compton-Untergrunds}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 4.
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 4.
+See the caption package documentation for explanation.
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 4.
 )
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language append on input line 121.
@@ -2261,8 +2298,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language append on input line 123.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language append on input line 123.
-
-[5
+ [5
 
 
 ]
@@ -2297,7 +2333,8 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language append on input line 128.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language append on input line 128.
- [7
+
+[7
 
 ] (./moessbauer.lot)
 \tf@lot=\write7
@@ -2325,37 +2362,43 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language append on input line 176.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language append on input line 176.
-
-[9]
+ [9]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 176.
- (./moessbauer.aux (./fp_abstract.aux) (./fp_intro.aux) (./fp_theorie.aux)
-(./fp_durchfuehrung.aux) (./fp_auswertung.aux) (./fp_diskussion.aux)
-(./fp_anhang.aux))
+ (./moessbauer.aux (./fp_abstract.aux)
+(./fp_intro.aux) (./fp_theorie.aux) (./fp_durchfuehrung.aux)
+(./fp_auswertung.aux) (./fp_diskussion.aux) (./fp_anhang.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 176.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 176.
-Package rerunfilecheck Info: File `moessbauer.out' has not changed.
-(rerunfilecheck)             Checksum: E2EC6864289378F79B9F804FDEB4715C;370.
+
+
+Package rerunfilecheck Warning: File `moessbauer.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `moessbauer.out':
+(rerunfilecheck)             Before: E2EC6864289378F79B9F804FDEB4715C;370
+(rerunfilecheck)             After:  2EC377CD4656782EA0F4C551C9743116;453.
 Package logreq Info: Writing requests to 'moessbauer.run.xml'.
 \openout1 = `moessbauer.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 176.
  ) 
 Here is how much of TeX's memory you used:
- 23186 strings out of 493029
- 395015 string characters out of 6136233
+ 23258 strings out of 493029
+ 396015 string characters out of 6136233
  821858 words of memory out of 5000000
- 26399 multiletter control sequences out of 15000+600000
- 42276 words of font info for 40 fonts, out of 8000000 for 9000
+ 26457 multiletter control sequences out of 15000+600000
+ 57628 words of font info for 57 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  40i,11n,45p,10406b,1538s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/
 public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/sh
 are/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmri12.pfb>
-Output written on moessbauer.pdf (12 pages, 142955 bytes).
+lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
+Output written on moessbauer.pdf (12 pages, 164739 bytes).
 PDF statistics:
- 123 PDF objects out of 1000 (max. 8388607)
- 101 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
+ 130 PDF objects out of 1000 (max. 8388607)
+ 107 compressed objects within 2 object streams
+ 25 named destinations out of 1000 (max. 500000)
  62 words of extra memory for PDF output out of 10000 (max. 10000000)
 
