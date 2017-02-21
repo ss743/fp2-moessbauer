@@ -30,7 +30,7 @@ expfit <- function(input, bereich, weighted=FALSE){ #--- Fitten der Exponentialf
 
 dexpfit <- function(input, bereich, weighted=FALSE){ #--- Fitten der Exponentialfunktion
   
-  theexponential <- y ~ A + C *exp(lambda*x) + D*exp(mu*x)
+  theexponential <- y ~ C *exp(lambda*x) + D*exp(mu*x)
   
   #daten=input[bereich[1]:bereich[2],]
   daten=subset(input,x>=bereich[1] & x <= bereich[2])
@@ -46,7 +46,7 @@ dexpfit <- function(input, bereich, weighted=FALSE){ #--- Fitten der Exponential
   mu_est=-1
   A_est=0
   err=daten$sy
-  startvalues=list(C=C_est,A=A_est,lambda=lambda_est,D=D_est,mu=mu_est)
+  startvalues=list(C=C_est,lambda=lambda_est,D=D_est,mu=mu_est)
   #---Startwerte
   
   #plot (function(x){A_est + C_est *exp(lambda_est*x) + D_est*exp(mu_est*x)},bereich[1],bereich[2],add=TRUE,col="green")
@@ -79,9 +79,9 @@ plotdexp <- function(fitdata,bereich){ #--- Plotten der gefitteten Exponentialfu
   mu<-fitdata["mu","Estimate"]
   C<-fitdata["C","Estimate"]
   D<-fitdata["D","Estimate"]
-  A<-fitdata["A","Estimate"]
+  #A<-fitdata["A","Estimate"]
   
-  plot (function(x){A + C *exp(lambda*x) + D*exp(mu*x)},bereich[1],bereich[2],add=TRUE,col="red")
+  plot (function(x){C *exp(lambda*x) + D*exp(mu*x)},bereich[1],bereich[2],add=TRUE,col="red")
   
 }
 

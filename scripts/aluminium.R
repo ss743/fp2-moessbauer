@@ -9,6 +9,11 @@ n = length(alu_names)
 alu = array(dim=c(2048,n))
 #alu[,1] = readTKA("aluminium/Alu_0-0mm")[[1]]
 
+m=c(0,1,1,1,1,1,1,2,1,2,2,2,2,2,2,3,2,3,3,3,3,3,3,4,4)
+s_di=0.1
+
+s_d=sqrt(m)*s_di
+
 for(i in c(1:n)){
   alu[,i] = readTKA(paste("aluminium/Alu_",alu_names[i],"mm",sep=""))[[1]]
 }
@@ -30,7 +35,7 @@ alu_err=alu_sum/sqrt(alu_sum2)
 
 x=c(1:n)*0.5-0.5
 bereich=c(0,12)
-drawCI(x,y=alu_sum,sy=alu_err,scol="black",xlab=expression(d/mm),ylab=expression(r/s^-1))
+drawCIx(x,y=alu_sum,sy=alu_err,sx=s_d,scol="black",xlab=expression(d/mm),ylab=expression(r/s^-1))
 fit=dexpfit(data.frame(x=x,y=alu_sum,sy=alu_err),bereich,weighted=TRUE)
 plotdexp(fit,c(0,12))
 printdexpdata(fit)
