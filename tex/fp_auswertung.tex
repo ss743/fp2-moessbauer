@@ -1,4 +1,41 @@
 \section{Auswertung}
 
 \subsection{Berechnung des Compton-Untergrunds}
-\gra{compton-untergrund}{Messung der Transmission durch Aluminium in Abhängigkeit der Schichtdicke zur Bestimmung des Compton-Untergrunds}
+
+Ein Effekt, welcher in die Messungen mit einfließt, ist der Compton-Untergrund. Dieser entsteht durch Photonen aus Zerfällen höherer Energien, welche einen Teil ihrer Energie durch Compton-Streuung an Elektronen abgeben und anschließend Energien innerhalb des $14.4\,\si{keV}$-Energiefensters haben. Um diesen Effekt auszugleichen wird aus Messungen mit Aluminiumplatten die Compton-Zählrate bestimmt. Hierzu wird die Zählrate der Quelle mit Abschirmung durch Aluminiumplatten für verschiedene Plattendicken gemessen. Die daraus resultierende Kurve besteht zum einen aus dem Beitrag des Compton-Untergrunds und zum anderen aus dem Beitrag der exponentiellen Abschwächung durch Absorption in den Aluminiumplatten.\\
+
+Um die einzelnen Beiträge zu bestimmen, wird ein doppelter Exponentialfit
+\begin{align}
+	r(d)&=A\cdot e^{-\lambda d}+B\cdot e^{-\mu d}
+\end{align}
+an die Messdaten gelegt, wobei $A\cdot e^{-\lambda d}$ den Beitrag des Compton-Untergrunds und $B\cdot e^{-\mu d}$ den Beitrag der Materialabschwächung darstellt. Aus dem Beitrag des Compton-Untergrundes wird nun die Compton-Zählrate für die Dicke $d=0$ extrapoliert:
+
+\begin{align}
+	r_\text{Untergrund}&=r(0)=A\cdot e^{-\lambda 0}=A\text{ .}\label{eq:dexpfit}
+\end{align}
+
+\gra[1]{compton-untergrund}{Messung der Transmission durch Aluminium in Abhängigkeit der Schichtdicke zur Bestimmung des Compton-Untergrunds\label{fig:comptonuntergrund}}
+
+Wir erhalten nun bei der Messung die in Abbildung \ref{fig:comptonuntergrund} dargestellten Messdaten. Die $y$-Fehler wurden aus den Poissonfehlern der Zählmessung berechnet: $s_r=r\cdot\frac{s_\text{Counts}}{\mathrm{Counts}}$. Für die Messung der Schichtdicken wurde ein Fehler von $s_{d,i}=0.1\,\si{mm}$ für eine Aluminiumplatte und damit $s=\sqrt{m}\cdot s_{d,i}$ mit der Anzahl $m$ der jeweils verwendeten Aluminiumplatten. Bei der Durchführung des Fits an Gleichung \ref{eq:dexpfit} erhalten wir folgende Parameter:
+
+\begin{align*}
+		A&=18.5\pm0.3\,\si{s^{-1}}\text{ ,}\\
+		B&=39.6\pm0.8\,\si{s^{-1}}\text{ ,}\\
+		\lambda&=0.043\pm0.002\,\si{mm^{-1}}\text{ ,}\\
+		\mu&=2.06\pm0.07\,\si{mm^{-1}}\text{ .}
+\end{align*}
+
+Daraus erhalten wir nun als Ergebnis für den Compton-Untergrund:
+\begin{align}
+	r_\text{Untergrund}&=18.5\pm0.3\,\si{s^{-1}}\text{ .}
+\end{align}
+
+\subsection{Abschwächung durch Plexiglas}
+
+Die Absorberproben liegen in Plexiglashalterungen vor. Da das Plexiglas die $\gamma$-Strahlung abschwächt, muss zur Korrektur der Messdaten die Abschwächung durch das Plexiglas berechnet werden. Hierzu liegt eine leere Plexiglashalterung vor, mit welcher eine Messung der Zählraten der Quelle durchgeführt wird. Diese Messung wird ebenso ohne Plexiglashalterung durchgeführt. Aus diesen beiden Messungen wird nun das Verhältnis zwischen der Zählrate mit und ohne Plexiglas und der Korrekturfaktor $k_\text{Plexi}$ bestimmt.\\
+
+Dabei wurden folgende Messergebnisse erzielt:
+\begin{align}
+	\frac{r_\text{plexi}}{r_\text{leer}}&=0.805\pm0.006\text{ ,}\\
+	k_\text{Plexi}=\frac{r_\text{leer}}{r_\text{plexi}}&=1.243\pm0.010\text{ .}
+\end{align}
