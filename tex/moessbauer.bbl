@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.6 $
+% $ biblatex bbl format version 2.7 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -18,11 +18,11 @@
 
 
 \refsection{0}
-  \sortlist[entry]{none/global}
+  \sortlist[entry]{none/global/}
     \entry{anleitung}{manual}{}
       \name{author}{1}{}{%
         {{hash=f6cea970135b11a6610de58aa933c311}{%
-           family={{A.\bibnamedelimi Zwerger,\bibnamedelimb S.\bibnamedelimi Winkelmann,\bibnamedelimb M.\bibnamedelimi Köhli}},
+           family={{A. Zwerger, S. Winkelmann, M. Köhli}},
            family_i={A\bibinitperiod}}}%
       }
       \strng{namehash}{f6cea970135b11a6610de58aa933c311}
