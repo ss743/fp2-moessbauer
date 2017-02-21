@@ -2,6 +2,8 @@ source("readFiles.R")
 source("functions.R")
 source("expfit.R")
 
+par(mar=c(5,5,1,1))
+
 alu_names = c("0-0","0-5","1-0","1-5","2-0","2-5","3-0","3-5","4-0","4-5","5-0","5-5","6-0","6-5","7-0","7-5","8-0","8-5","9-0","9-5","10-0","10-5","11-0","11-5","12-0")
 n = length(alu_names)
 alu = array(dim=c(2048,n))
@@ -32,3 +34,11 @@ drawCI(x,y=alu_sum,sy=alu_err,scol="black",xlab=expression(d/mm),ylab=expression
 fit=dexpfit(data.frame(x=x,y=alu_sum,sy=alu_err),bereich,weighted=TRUE)
 plotdexp(fit,c(0,12))
 printdexpdata(fit)
+
+C<-fit["C","Estimate"]
+sC<-C*sqrt((fit["C","Std. Error"]/fit["C","Estimate"])^2)
+
+untergrund=roundfunc(c(C,sC))
+
+cat("\nUntergrund:\nr_U = (")
+cat(paste(untergrund[1]," +- ",untergrund[2],") 1/s",sep=""))
