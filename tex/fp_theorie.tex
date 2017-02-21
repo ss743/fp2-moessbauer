@@ -1,2 +1,90 @@
 \section{Theoretische Grundlagen}
 \cite{anleitung}
+\subsection{Wechselwirkung von Photonen mit Materie}
+
+Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Materie wechselwirken. Wir unterscheiden dabei grundsätzlich drei Prozesse: Den Photoeffekt, den Compton-Effekt und die Paarbildung. In Materie klingt die Intensität von $\gamma$-Strahlung exponentiell ab:
+\begin{align}
+I&= I_0\cdot e^{-\mu x}
+&\text{mit } 
+\mu &= \mu_{photo} + \mu_{Compton} + \mu_{Paar}
+\end{align}
+
+
+
+\begin{itemize}
+\item \textbf{Photo-Effekt}
+Beim Photoeffekt dringt ein Photon in das Atom ein und überträgt seine gesamte Energie an ein Elektron der inneren Schalen. Dabei wird Energie auf dieses Elektron übertragen, es wird aus der Atomhülle befreit und erhält kinetische Energie. Die hier entstandene Lücke wird über Abstrahlung eines $\gamma$-Quants oder eines Elektrons wieder gefüllt.
+
+\item\textbf{Compton-Effekt}
+Beim Compton-Effekt trifft ein einfallendes $\gamma$-Quant auf ein freies oder nur leicht gebundenes Elektron und überträgt einen Teil seiner Energie auf dieses. Dieser Prozess findet meist bei Energien zwischen $200$ keV und $5$ MeV statt.
+
+\item\textbf{Paarbildung und Paarvernichtung \label{PVN1}}
+Bei der Paarbildung entsteht durch die Wechselwirkung des $\gamma$-Quants mit dem elektromagnetischen Feld des Atomkerns oder eines Elektrons ein Teilchen-Antiteilchen-Paar, z.B. Elektronen-Positronen-Paar. Paarbildung ist für Energien über $1,022$ MeV möglich. Die über diesen Grenzwert hinausgehende Energie wird auf die entstandenen Teilchen übertragen, der Impuls wird vom Kern aufgenommen. Da das Positron nicht lange alleine existieren kann, vereinigt es sich unter Abstrahlung von zwei $\gamma$-Quanten mit einer Energie von je 511 keV mit einem Elektron.
+\end{itemize}
+
+ \subsection{Nachweis der $\gamma$-Strahlung mithilfe des Szintillationszählers}
+ Die emittierten Photonen müssen nun detektiert und ihre Energie bestimmt werden. Dazu wird ein Energie-sensitiver Detektor, eine Kombination aus Szintillator und Photomultiplier, verwendet.
+ \paragraph{Szintillator} Ein Szintillator detektiert Teilchen eines bestimmten Energiebereichs. Es gibt organische und anorganische Szintillatoren, wobei in diesem Versuch anorganische NaI(Tl)-Szintillatoren verwendet werden. Dieser besteht aus einem mit Thallium dotierten NaI-Kristall, in welchem die eintreffenden Photonen ihre Energie durch den Photo- oder Compton-Effekt an Elektronen abgeben. Je höher die Energie der Photonen ist, desto mehr Elektronen werden erzeugt. Diese Elektronen werden nun angeregt und später unter Emission  niederenergetischer Photonen wieder abgeregt. Die Dotierung mit Thallium verhindert, dass die emittierten Elektronen wieder absorbiert werden.
+ \paragraph{Photomultiplier}
+ Das Licht wird nun vom Szintillator über Lichtleiter zum Photomultiplier geleitet. Dieser wandelt die Lichtimpulse des Szintillators durch den Photoeffekt in elektrische Impulse um, welche proportional zur Lichtintensität sind und verstärkt diese durch Elektronenvervielfachung.
+ 
+ 
+
+\section{Zerfallsschema von Cobalt}
+
+Das in diesem Versuch verwendete $^{57}$Co zerfällt mit einer Wahrscheinlichkeit von $99,8\%$ und einer Halbwertszeit von $270$ Tagen über Elektroneneinfang in einen angeregten Zustand von $^{57}\mathrm{Fe}^*$ (siehe Abbildung \ref{Co57}).
+
+\[ ^{57}_{27}\mathrm{\textbf{Co}} +\ \mathrm{e}^-\ \longrightarrow\ ^{57}_{26}\mathrm{\textbf{Fe}}^*\ +\ \nu_e\]
+
+\gra{co57schema}{Zerfallsschema von $^{57}$Co \label{Co57} }
+
+Der angeregte Zustand geht unter anderem über die Aussendung eines Photons mit einer Energie von $14,4\,\mathrm{keV}$ mit einer Halbwertszeit von $98\,\mathring{ns}$ in den Grundzustand über.
+
+\section{Lebensdauer und Linienbreite}
+
+Die mittlere Lebensdauer ist über den Erwartungswert der Zeit definiert, die ein Zustand existiert. Es ergibt sich folgender Zusammenhang:
+\begin{align}
+\tau:=\langle t\rangle=\int_{0}^{\infty}t\lambda e^{-\lambda t}dt=\frac{1}{\lambda} 
+\end{align}
+
+Grund dafür, dass Spektrallinien eine natürliche Breite haben und nicht als Delta-Distribution auftreten, ist die Heisenbergsche Unschärferelation
+
+\begin{align}
+\Delta E\cdot\Delta t\geq\frac{\hbar}{2}
+\end{align}
+
+
+Die natürliche Zerfallsbreite weißt ein Breit-Wiegner Profil auf. Man erhält damit folgenden Zusammenhang zwischen Zerfallsbreite und Lebensdauer:
+
+\[\Gamma=\frac{\hbar}{\tau}\]
+
+
+Die Lebensdauer des in diesem Versuch untersuchten $14,4\,\mathrm{keV}$ Übergangs beträgt  $\tau = 1.4\cdot 10^{-7}\,\mathrm{s}$. Es folgt also eine natürliche Zerfallsbreite von $\Gamma = 4.7\cdot 10^{-9}$. Es handelt sich also um einen sehr scharfe Linie mit einer relativen Breite von $\frac{\Gamma}{E_{\gamma}}=3\cdot 10^{-13}$.
+
+
+\subsection{Dopplerverbreiterung}
+
+Aus der thermischen Bewegung der Kerne folgt eine Dopplerverbreiterung der Linienbreite in beide Richtungen, der ein Gauß-Profil zu Grunde liegt. Diese ist wie folgt gegeben.
+
+\begin{align}
+\Gamma_{Dop} = 2\sqrt{\ln2}\cdot E_{\gamma}\cdot\sqrt{\frac{2kT}{Mc^2}}
+\end{align}
+
+
+
+\section{Resonanzabsorption}
+
+\section{Gittermodelle}
+
+\subsection{Einsteinmodell}
+
+\subsection{Debyemodell}
+
+\section{title}
+
+\subsection{Isomerieverschiebung}
+
+\subsection{Hyperfeinstrukturaufspaltung}
+
+
+

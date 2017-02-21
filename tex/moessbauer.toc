@@ -6,12 +6,36 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2}Theoretische Grundlagen}{2}{section.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Versuchsaufbau und -Durchf\IeC {\"u}hrung}{3}{section.3}
+\contentsline {subsection}{\numberline {2.1}Wechselwirkung von Photonen mit Materie}{2}{subsection.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Auswertung}{4}{section.4}
+\contentsline {section}{\numberline {3}Zerfallsschema von Cobalt}{2}{section.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Zusammenfassung und Diskussion }{5}{section.5}
+\contentsline {section}{\numberline {4}Lebensdauer und Linienbreite}{3}{section.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Anhang}{6}{section.6}
+\contentsline {subsection}{\numberline {4.1}Dopplerverbreiterung}{3}{subsection.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Literatur}{9}{section*.5}
+\contentsline {section}{\numberline {5}Resonanzabsorption}{4}{section.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Gittermodelle}{4}{section.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1}Einsteinmodell}{4}{subsection.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2}Debyemodell}{4}{subsection.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7}title}{4}{section.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.1}Isomerieverschiebung}{4}{subsection.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2}Hyperfeinstrukturaufspaltung}{4}{subsection.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8}Verwendete Ger\IeC {\"a}te}{4}{section.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9}Versuchsaufbau und -Durchf\IeC {\"u}hrung}{5}{section.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {10}Auswertung}{6}{section.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {11}Zusammenfassung und Diskussion }{7}{section.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {12}Anhang}{8}{section.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Literatur}{11}{section*.5}
