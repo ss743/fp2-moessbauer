@@ -10,3 +10,9 @@ readTKA <- function(filename){
   return (read.table(paste("../data/",filename,".TKA",sep="")))
   
 }
+
+readTXT <- function(filename){
+  
+  return (read.table(paste("../data/",filename,".txt",sep=""),dec=","))
+  
+}
