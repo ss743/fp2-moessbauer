@@ -60,7 +60,7 @@ plotlorentz<-function(fitdata,bereich){
   omega<-fitdata["omega","Estimate"]
   tau<-fitdata["tau","Estimate"]
   
-  try({plot(function(x){D+C/2*(2-(2*(x-omega)*tau)^2/(1+(2*(x-omega)*tau)^2))},-6,6,add=TRUE,col="red")})
+  try({plot(function(x){D+C/2*(2-(2*(x-omega)*tau)^2/(1+(2*(x-omega)*tau)^2))},-6,6,add=TRUE,col="red",n=10000)})
 }
 
 plotdisp<-function(fitdata,bereich){

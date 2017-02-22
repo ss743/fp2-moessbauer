@@ -37,7 +37,7 @@ plotgaus <- function(fitdata,bereich,col="red"){ #--- Plotten der gefitteten Gau
   mu<-fitdata["mu","Estimate"]
   sig<-fitdata["sig","Estimate"]
   
-  plot (function(x){C + N/(sqrt(2*pi)*sig)*exp(-(x-mu)^2/(2*sig^2))},bereich[1],bereich[2],add=TRUE,col=col)
+  plot (function(x){C + N/(sqrt(2*pi)*sig)*exp(-(x-mu)^2/(2*sig^2))},bereich[1],bereich[2],add=TRUE,col=col,n=10000)
   
 }
 
