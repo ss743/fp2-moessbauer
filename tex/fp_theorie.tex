@@ -24,11 +24,13 @@ Bei der Paarbildung entsteht durch die Wechselwirkung des $\gamma$-Quants mit de
 
  \subsection{Nachweis der $\gamma$-Strahlung mithilfe des Szintillationszählers}
  Die emittierten Photonen müssen nun detektiert und ihre Energie bestimmt werden. Dazu wird ein Energie-sensitiver Detektor, eine Kombination aus Szintillator und Photomultiplier, verwendet.
- \paragraph{Szintillator} Ein Szintillator detektiert Teilchen eines bestimmten Energiebereichs. Es gibt organische und anorganische Szintillatoren, wobei in diesem Versuch anorganische NaI(Tl)-Szintillatoren verwendet werden. Dieser besteht aus einem mit Thallium dotierten NaI-Kristall, in welchem die eintreffenden Photonen ihre Energie durch den Photo- oder Compton-Effekt an Elektronen abgeben. Je höher die Energie der Photonen ist, desto mehr Elektronen werden erzeugt. Diese Elektronen werden nun angeregt und später unter Emission  niederenergetischer Photonen wieder abgeregt. Die Dotierung mit Thallium verhindert, dass die emittierten Elektronen wieder absorbiert werden.
+ \paragraph{Szintillator} Ein Szintillator detektiert Teilchen eines bestimmten Energiebereichs. Es gibt organische und anorganische Szintillatoren, wobei in diesem Versuch anorganische NaI(Tl)-Szintillatoren verwendet werden. Dieser besteht aus einem mit Thallium dotierten NaI-Kristall, in welchem die eintreffenden Photonen ihre Energie durch den Photo- oder Compton-Effekt an Elektronen abgeben. Je höher die Energie der Photonen ist, desto mehr Elektronen werden erzeugt. Diese Elektronen werden nun angeregt und später unter Emission  niederenergetischer Photonen wieder abgeregt. Die Dotierung mit Thallium verhindert, dass die emittierten Elektronen wieder absorbiert werden. Die Bandstruktur, auf der die Funktionsweise eines Szintillators beruht, ist in Abbildung \ref{Szinti} dargestellt.
+ 
+ \gra[0.7]{Szinti}{Funktionsweise eines Szintillators \label{Szinti}}
  \paragraph{Photomultiplier}
- Das Licht wird nun vom Szintillator über Lichtleiter zum Photomultiplier geleitet. Dieser wandelt die Lichtimpulse des Szintillators durch den Photoeffekt in elektrische Impulse um, welche proportional zur Lichtintensität sind und verstärkt diese durch Elektronenvervielfachung.
+ Das Licht wird nun vom Szintillator über Lichtleiter zum Photomultiplier geleitet. Dieser wandelt die Lichtimpulse des Szintillators durch den Photoeffekt in elektrische Impulse um, welche proportional zur Lichtintensität sind und verstärkt diese durch Elektronenvervielfachung. Die Funktionsweise eines Photomultipliers ist in Abbildung \ref{Multi} dargestellt.
  
- 
+ \gra[]{Photomult}{Funktionsweise eines Photomultipliers \label{Multi}}
 
 \subsection{Zerfallsschema von Cobalt}
 
@@ -76,9 +78,26 @@ Aus der thermischen Bewegung der Kerne folgt eine Dopplerverbreiterung der Linie
 
 \subsection{Gittermodelle}
 
+Im Folgenden Abschnitt sollen die beiden wichtigsten Gittermodelle, das EInstein- und das Debye-Modell, sowie ihre jeweilige Gültigkeit diskutiert werden.
+
 \subsubsection{Einsteinmodell}
 
+Das Einsteinmodell macht die Annahme, das jedes Atom im Gitter als harmonischer Oszillator mit 3 Freiheitsgraden mit der Frequenz $\omega_E$ beschrieben werden kann. Ein Gitter wird demnach als N Oszillatoren mit 3N Freiheitsgraden und der einheitlichen Frequenz  $\omega_E$ betrachtet. Die Energie eines harmonischen Oszillators ist gegeben durch:
+\begin{align}
+E_n=\left( n+\frac{1}{2}\hbar\omega\right) 
+\end{align} 
+
+Nach diesem Modell können durch Energieübertrag  (z.B. Rückstoßenergie)  Gitterschwingungen, sogenannte Phononen, der Energie $\hbar \omega_E$ angeregt werden. Klassisch würde es immer zu Gitterschwingungen kommen. Durch die Quantisierung der Energie in der Quantenmechanik ist dies nicht mehr der Fall, da die Rückstßenergie bei einem $\gamma$-Übergang von Kernzuständen $E_R$ häufig kleiner als $\hbar \omega_E$ ist. Man kann nun Wahrscheinlichkeiten dafür angeben, ob ein Übergang rückstoßfrei oder unter Anregung eines Phonons stattfindet. Für  $^{57}$Fe gilt:
+$E_R\approx0,2\cdot10^{-2}\,\mathrm{eV} < 10^{-2}\,\mathrm{eV}=\hbar\omega_E $. Die Wahrscheinlichkeit für einen rückstoßfreier Übergang beträgt $0,8$, ein Übergang unter Anregung einer Gitterschwingung $0,2$. Nach dem Einsteinmodell ist der Anteil der rückstoßfreien Übergänge durch folgenden Zusammenhang gegeben:
+
+\begin{align}
+f_E = 1-\frac{E_R}{\hbar \omega_E}\approx0,9
+\end{align}
+In der Realität sind die Phononen eines Körpers allerdings deutlich komplexer, vor allem die Annahme einer einheitlichen Frequenz ist falsch. Das Einstein-Modell bietet eine gute Näherung für hohe Temperaturen versagt jedoch bei tiefen.
+
 \subsubsection{Debyemodell}
+
+
 
 \subsection{title}
 
@@ -90,5 +109,8 @@ Die Änderung der chemischen Umgebung eines Atoms, also zum Beispiel der Einbau 
 
 \subsubsection{Hyperfeinstrukturaufspaltung}
 
-
+Die Wechselwirkung zwischen dem Magnetfeld der Elektronenhülle und dem magnetischen Kernspin führt zur Aufhebung der Entartung der $\gamma$-Übergänge und somit zur Hyperfeinstruktur-Aufspaltung gemäß: 
+\[E_{mag} = \frac{\mu_I m_I}{I}B\]
+mit dem magnetischen Kernmoment $\mu_I$, dem Kernspin $I$, der magnetischen Quantenzahl $m_I$ und dem Magnetfeld $B$ am Kernort.\\
+Dabei spaltet der Grundzustand in zwei und der angeregte Zustand in vier Linien auf. Von den dadurch entstehenden theoretischen acht Übergängen sind zwei aufgrund der Auswahlregel $\Delta m =0, \pm 1$ für die magnetische Quantenzahl $m$ verboten. Im Mößbauer-Spektrum werden demnach sechs Peaks sichtbar.
 
