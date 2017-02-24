@@ -24,7 +24,10 @@ expfit <- function(input, bereich, weighted=FALSE){ #--- Fitten der Exponentialf
   else
     fit = nls(theexponential,daten,start=startvalues,control=nlc)
   
-  return(summary(fit)$parameters)
+  chiquadratndf=sum(summary(fit)[[2]]^2)/summary(fit)[[4]][[2]]
+  fitdata=rbind(summary(fit)$parameters,c(chiquadratndf,0,0,0))
+  
+  return(fitdata)
   
 }
 
@@ -59,7 +62,11 @@ dexpfit <- function(input, bereich, weighted=FALSE){ #--- Fitten der Exponential
   else
     fit = nls(theexponential,daten,start=startvalues,control=nlc)
   
-  return(summary(fit)$parameters)
+  
+  chiquadratndf=sum(summary(fit)[[2]]^2)/summary(fit)[[4]][[2]]
+  fitdata=rbind(summary(fit)$parameters,c(chiquadratndf,0,0,0))
+  
+  return(fitdata)
   
 }
 

@@ -29,9 +29,10 @@ Ba[1:2]=0
 x=c(1:2048)
 
 drawCI(x, Tb, sqrt(Tb), scol="black")
-bereich=c(420, 1000)
-fit5=supergausfit(data.frame(x=x, y=Tb, sy=sqrt(Tb)), bereich,sig0=70,N01=1350000,sig01=55,mu01=750, weighted=TRUE) 
-plotsupergausfit(fit5, bereich, col="red")
+bereich=c(450, 1000)
+fit5=supergausfit(data.frame(x=x, y=Tb, sy=sqrt(Tb)), bereich,mu=593,sig0=55,N0=22500,N01=2500000,sig01=80,mu01=740, weighted=TRUE) 
+plotsupergaus(fit5, bereich, col="red")
+printsupergausdata(fit5)
 #drawCI(x, Rb, sqrt(Rb), scol="black")
 #fit4=gausfit(data.frame(x=x,y=Rb, sy=sqrt(Rb)),c(100,218), weighted=TRUE)
 #plotgaus(fit4,c(100,218),col="red")

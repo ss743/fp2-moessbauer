@@ -17,15 +17,17 @@ srate=rate/sdata
 
 x=data[[1]]
 
-drawCI(x,rate,srate)
-fit=lorentzfit(data.frame(x=x,y=rate),neg=TRUE)
-plotlorentz(fit,c(-6,6))
-fit2=gausfit(data.frame(x=x,y=rate),c(-6,6))
-plotgaus(fit2,c(-6,6),col="blue")
+drawCI(x,rate,srate,xlab=expression(v / mms^-1),ylab=expression(r / s^-1))
+fit=lorentzfit(data.frame(x=x,y=rate,sy=srate),neg=TRUE,weighted=TRUE)
+plotlorentz(fit,c(-6,6),lwd=1.5,lty=3)
+fit2=gausfit(data.frame(x=x,y=rate,sy=srate),c(-6,6),weighted=TRUE)
+plotgaus(fit2,c(-6,6),col="blue",lwd=1.5,lty=2)
 A0=fit2['N','Estimate']
 C0=fit2['C','Estimate']
 mu0=fit2['mu','Estimate']
 sigma0=fit2['sig','Estimate']
 gamma0=fit['omega','Estimate']
-fit3=voigtfit(data.frame(x=x,y=rate),A0,C0,mu0,sigma0,gamma0)
-plotvoigt(fit3,c(-6,6),col="green")
+fit3=voigtfit(data.frame(x=x,y=rate,sy=srate),A0,C0,mu0,sigma0,gamma0,weighted=TRUE)
+plotvoigt(fit3,c(-6,6),col="green",lwd=2.5,lty=1)
+
+legend(2,0.027,c("Lorentzfit","Gaussfit","Voigtfit"),col=c("red","blue","green"),lty=c(3,2,1),lwd=c(1.5,1.5,2.5))
