@@ -20,7 +20,7 @@ gausfit <- function(input,bereich,weighted=FALSE,sig0=0,N0=0){ #--- Fitten der E
   }
   N0=(sqrt(2*pi)*sig0)*(ymax-ymin)
   #cat(paste("\nC=",ymin,"\nN=",N0,"\nmu=",mu0,"\nsigma=",sig0,sep=""))
-  #plot (function(x){ymin + N0/(sqrt(2*pi)*sig0)*exp(-(x-mu0)^2/(2*sig0^2))},bereich[1],bereich[2],add=TRUE,col="red")
+  #plot (function(x){ymin + N0/(sqrt(2*pi)*sig0)*exp(-(x-mu0)^2/(2*sig0^2))},bereich[1],bereich[2],add=TRUE,col="green")
   if(weighted)
     err=daten$sy
   else

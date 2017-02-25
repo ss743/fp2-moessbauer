@@ -74,7 +74,49 @@ Aus der thermischen Bewegung der Kerne folgt eine Dopplerverbreiterung der Linie
 
 
 
-\subsection{Resonanzabsorption}
+\subsection{Resonanzabsorbtion}
+
+Resonanzabsorbtion beschreibt den Prozess, bei dem ein Kern beim Übergang von einem angeregten Zustand  $E_a$ in den Grundzustand $E_g$ ein Photon aussendet, das dann von einem zweiten Kern absorbiert wird und in diesem den gleichen Übergang anregt. 
+
+Auf Grund der Impulserhaltung muss bei der Aussendung eines Photons von einem ruhenden, freien Kern eben dieser Kern den gleichen Impuls  $p_K = -p_{\gamma}$ tragen, wie das ausgesendete Photon. Die Rückstoßenergie, die auf den Kern übertragen wird, ist dann wie folgt gegeben:
+
+\begin{align}
+E_R = \frac{p^2}{2M} = \frac{p_{\gamma}^2}{2M} = \frac{E_{\gamma}^2}{2Mc^2} \label{5}
+\end{align}
+ mit der Photonenenergie $E_{\gamma}=p_{\gamma}c$ und der Kernmasse $M$.
+
+Aus Energieerhaltung folgt für die Energie des Photons somit:
+
+\begin{align}
+E_{\gamma}' = E_0 - E_R
+\end{align}
+
+mit der Übergangsenergie $E_0$. Bei der Reabsorbtion dieses Photons muss erneut die Rückstoßenergie $E_R$  auf den Kern übertragen werden. Es trägt dann also noch folgende Energie $E_{\gamma}$:
+
+\begin{align}
+E_{\gamma} = E_0-2E_R
+\end{align}
+
+Die Rückstoßenergie liegt für freie Atome in einem Bereich von ca.  $10^{-3}$eV. Die Verschiebung der Photonenenergie ist damit deutlich größer als die natürliche Linienbreite des Kernübergangs. Demnach kann bei freien Atomen theoretisch Resonanzabsorption nicht beobachtet werden. Allerdings liefert die Dopplerverrbreitung einen Beitrag, der in der Größenordnung der Rückstoßenergie liegt, sodass sich Emissions- und Absorbtionsspektrum im Experiment tatsächlich überlappen und Resonanzabsorption stattfindet (siehe Abbildung \ref{Doppler}).
+
+\gra[]{Doppler}{Dopplerverbreiterung der Emissionsenergie führt zu Überlapp mit Absorbtionspeak und damit zu Resonanzabsorbtion bei Raumtemperatur \label{Doppler}}
+Zudem kann (z.B. bei tieferen Temperaturen mit geringerer Dopplerverbreiterung) durch Bewegung der Quelle (oder des Absorbers, die Relativgeschwindigkeit ist entscheidend) und daraus folgender Dopplerverschiebung die Verschiebung der Photonenenergie durch die Rückstoßenergie ausgeglichen werden.
+Bei einer Quellengeschwindigkeit/Absorbergeschwindigkeit $v_Q$ ergibt sich für die gesamte Energieverschiebung \footnote{Herleitung siehe} %\cite{jakobs}}:
+\begin{align}
+\Delta E = 2E_R - E_{dop} = \frac{E_{\gamma}^2}{Mc^2} - E_{\gamma}\frac{v_Q}{c}
+\end{align}
+
+Bei passender Gesschwindigkeit wird somit Resonanzabsorption beobachtet (siehe Abbildung \ref{velocity}).
+
+\gra{Geschwindigkeitsvariation}{Die Energie der Photonen kann durch Geschwindigkeitsvariation der Quelle verändert werden \label{velocity}}
+
+\subsection{ Mößbauer-Effekt}
+
+Beim Einbau eines Kerns in ein Kristallgitter, wird der Impuls des Rückstoßes vom gesamten Kristall aufgenommen. Durch die vergleichsweise sehr große Masse des Kristalls ist die Rückstoßenergie nach \ref{5} sehr gering. Beim RÜckstoß eines Photons auf ein Mol Eisen beträgt die Rückstoßenergie beispielsweise nur etwa $10^{-27}$eV. Dieser Energieverlust ist deutlich kleiner als die natürliche Linienbreite, sodass trotz der Verschiebung die Photonenenergie über den Bereich der natürlichen Linienbreite hinaus verschoben wird. Trifft das Photon dann erneut auf einen Atomkern kann auch hier der Rückstoß vernachlässigt werden und es kommt zur Reabsorption. 
+Auch hier kann analog zu freien Atomen die Photonenenergie durch gerichtete Bewegung verschoben werden. Bei Messung der Transmissionsrate hinter dem Absorber erwartet man dann einen Einbruch be der relativen Resonanzgeschwindigkeit $v_{res}$ (siehe Abbildung \ref{KILL THE STICKMAN}). Theoretisch liegt diese bei $v_0=0$, da, wie bereits erwähnt, hier die Rückstoßenergie vernachlässigt werden kann. In der Realität beobachtet man eine Verschiebung der Resonanzgeschwindigkeit auf Grund der Isomerie-Verschiebung siehe Abschnitt \ref{Isomerie}.  
+Diesen Effekt bezeichnet man als Mößbauer-Effekt.
+
+\gra[]{Moessbauer_Spektrum}{oben: Dopplerverschiebung der Energie als Ausgleich zum Rückstoßverlust unten: Transmission hinter dem Absorber in Abhängigkeit der Geschwinidgkeit \label{KILL THE STICKMAN}}
 
 \subsection{Gittermodelle}
 
@@ -93,16 +135,47 @@ $E_R\approx0,2\cdot10^{-2}\,\mathrm{eV} < 10^{-2}\,\mathrm{eV}=\hbar\omega_E $. 
 \begin{align}
 f_E = 1-\frac{E_R}{\hbar \omega_E}\approx0,9
 \end{align}
-In der Realität sind die Phononen eines Körpers allerdings deutlich komplexer, vor allem die Annahme einer einheitlichen Frequenz ist falsch. Das Einstein-Modell bietet eine gute Näherung für hohe Temperaturen versagt jedoch bei tiefen.
+In der Realität sind die Phononen eines Körpers allerdings deutlich komplexer. Das Einstein-Modell bietet eine gute Näherung für hohe Temperaturen versagt jedoch bei tiefen.
 
 \subsubsection{Debyemodell}
 
+Die Ursache der Unstimmigkeiten zwischen dem Einsteinmodell und den experimentellen Daten ist hauptsächlich die Annahme, dass eine einzelne Frequenz alle 3N harmonische Oszillatoren charakterisiert. Debye verbesserte Einsteins Theorie in dem er die Vibrationen eines Körpers als ein ganzes betrachtete und von einem kontinuierlichen, elastischen Festkörper unter Berücksictigung der Dispersionsrelation ausging. Er ordnete die Innere Energie des Festkörpers stationären, elastischen Schallwellen zu. Jede unabhängig Vibrations- (oder Normal-)mode wird dabei als ein Freiheitsgrad behandelt.
+Anders ausgedrückt behandelt Debye einen Festkörper also als Phononengas. Vibrationswellen sind Materiewellen, jede mit ihrer eigenen de Broglie Wellenlänge und assoziiertem Teilchen. 
+Die 1.Brioullin-Zone des Gitters lässt sich durch eine Kugel mit dem  Radius  $k_D$ ersetzten, der dem Debye-Wellenvektor entspricht.  Hieraus ergibt sich die Debye-Frequenz als Grenzfrequenz zu:
+\begin{align}
+\omega_D = v\cdot k_D
+\end{align}
+und die Debye-Temperatur zu:
+\begin{align}
+\theta_D = \frac{\hbar\omega_D}{k}.
+\end{align}
+Die Debye-Temperatur gibt an bei welcher Temperatur alle Schwingungsmoden angeregt sind. Das Debye-Modell hat nur innerhalb dieser Grenzen Gültigkeit.\\
+In Abbildung \ref{VS} sind das Einsteinmodell und das Debyemodell im Vergleich dargestellt.
 
+\gra{Einstein-vs-Debye}{Vergleich zwischen Einstein- und Debye-Modell: oben: Frequenzverteilung bei Einstein (links) und Debye (rechts) unten: Energieverteilung im Festkörper beim Einstein-Modell (links) und in der Realität (durch Debye gut beschrieben, rechts) \label{VS}}
+
+Auch im Debye-Modell kann der Bruchteil der rückstoßfreien Emissionen bestimmt werden, und zwar genauer als im Einstein-Modell. Dieser sogenannte Debye-Waller-Faktor ist temperaturabhängig. Das Prinzip hinter diesem physikalischen Prozess ist in Abbildung \ref{Debye} dargestellt.
+
+\gra[0.9]{Debye}{Anteil rückstoßfreier Emissionen im Debye-Modell \label{Debye}}
+
+Der Debye-Waller-Faktor ergibt sich nach dem Debye-Modell zu
+
+\begin{align}
+f = \exp\left[ -\frac{3E_R}{2k\theta_D}\left( 1+\left( \frac{2T}{\theta_D}^2 \int_{0}^{\theta_D/T}\frac{x\mathrm{d}x}{e^x-1}\right) \right) \right]
+\end{align}.
+Für Temperaturen $T$, für die $T \ll \theta_D$ gilt, und Kerne in arteigenen kubischen Gittern, kann folgende Näherung gemacht werden:
+\begin{align}
+f\approx \exp\left[ -\frac{E_R}{k\theta_D} \left(\frac{3}{2} + \left(\frac{\pi T}{\theta_D}\right)^2 \right) \right]
+\end{align}.
+
+Die Debye-Temperatur von Eisen liegt bei ca. $470 \,\mathrm{K}$. Bei Raumtemperatur ergibt sich somit ein Debye-Waller-Faktor von $f=0.8$, 80\% der Übergänge finden also rückstoßfrei statt. Diese Eigenschaften machen Eisen zu einem guten Mößbauer-Kandidaten. Dies ist auch noch einmal in Abbildung \ref{DWF} dargestellt. Man erkennt deutlich, dass der Debye-Waller-Faktor für Eisen bis über Raumtemperatur hinaus kaum absinkt, der Versuch kann also ungekühlt durchgeführt werden.
+
+\gra{Debye-Waller-Faktor}{Temperaturabhängigkeit des Debye-Waller-Faktor für Eisen und Rhenium \label{DWF}}
 
 \subsection{Modifikationen des Übergangsspektrums}
 
 Im folgenden Abschnitt werden die Effekte die zur Verschiebung
-\subsubsection{Isomerieverschiebung}
+\subsubsection{Isomerieverschiebung \label{Isomerie}}
 
 Die Änderung der chemischen Umgebung eines Atoms, also zum Beispiel der Einbau in ein Gitter, bewirkt eine effektive Änderung des Coulomb-Potential des Kerns und dessen effektiven Radius. Auf Grund der Potentialabhängigkeit der Energie von Kernübergängen, verschiebt sich die Übergangsenergie somit. Dieser als Isomerieverschiebung bezeichnete Effekt tritt in diesem Versuch auf Grund der unterschiedlichen chemischen Umgebung von Quelle und Absorber auf und ist zu berücksichtigen.
 
@@ -110,8 +183,16 @@ Die Änderung der chemischen Umgebung eines Atoms, also zum Beispiel der Einbau 
 
 \subsubsection{Hyperfeinstrukturaufspaltung}
 
-Die Wechselwirkung zwischen dem Magnetfeld der Elektronenhülle und dem magnetischen Kernspin führt zur Aufhebung der Entartung der $\gamma$-Übergänge und somit zur Hyperfeinstruktur-Aufspaltung gemäß: 
-\[E_{mag} = \frac{\mu_I m_I}{I}B\]
-mit dem magnetischen Kernmoment $\mu_I$, dem Kernspin $I$, der magnetischen Quantenzahl $m_I$ und dem Magnetfeld $B$ am Kernort.\\
-Dabei spaltet der Grundzustand in zwei und der angeregte Zustand in vier Linien auf. Von den dadurch entstehenden theoretischen acht Übergängen sind zwei aufgrund der Auswahlregel $\Delta m =0, \pm 1$ für die magnetische Quantenzahl $m$ verboten. Im Mößbauer-Spektrum werden demnach sechs Peaks sichtbar.
+Zwischen dem Magnetfeld der Elektronenhülle und dem magnetischen Kernspin findet eine Wechselwirkung statt, die zur Aufhebung der Entartung der Energieniveaus führt. Diese Hyperfeinstruktur-Aufspaltung 
+ist gegeben durch:
+\begin{align}
+E_{mag} = \frac{\mu_I m_I}{I}B
+\end{align}
+mit dem magnetischen Kernmoment $\mu_I$, dem Kernspin $I$, der magnetischen Quantenzahl $m_I$ und dem Magnetfeld $B$ am Kernort.
+Bei dem in diesem Versuch zu untersuchendem Übergang spaltet sich der Grundzustand in zwei Linien auf und der angeregte Zustand in vier Linien. Von diesen acht theoretischen Übergängen werden auf Grund folgender Auswahlregel nur sechs im Mößbauer-Spektrum beobachtet: $\Delta m =0, \pm 1$ ist für die magnetische Quantenzahl $m$ verboten.
 
+Das durch beide beschriebenen Effekte resultierende Spektrum ist in Abbildung \ref{hyper} dargestellt.
+
+\gra{hyper}{Hyperfeinaufspaltung von Eisen-57}
+
+Rechts ist die Hyperfeinaufspaltung mit ihren 6 Übergängen zu sehen. Zudem sind auch die elektrische Quadrupolaufspaltung und die Isomerieverschiebung zu erkennen. Die Quadrupolaufspaltung wird in diesem Versuch nicht untersucht. Sie tritt bei deformierten Kernen mit nicht verschwindendem Quadrupolmoment und einer asymmetrischen Elektronenhülle, die einen Feldgradienten erzeugt, auf. Dies ist häufig in komplexen Eisenverbindungen (z.B. Borazit) zu finden. Im Spektrum wären hierbei 2 Peaks zu erkennen.
