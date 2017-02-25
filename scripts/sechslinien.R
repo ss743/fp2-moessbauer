@@ -9,11 +9,17 @@ source("voigtfit.R")
 
 par(mar=c(5,5,1,1))
 
-data = readTXT(paste("sechslinien/sechslinien",sep=""))
+data = readTXT(paste("sechslinien/sechslinien0",sep=""))
 
+data[[2]]=data[[2]]*10^-3
 rate=data[[3]]/data[[2]]
 sdata=sqrt(data[[3]])
 srate=rate/sdata
+
+untergrund=18.5
+suntergrund=0.3
+rate=rate-untergrund
+srate=sqrt(srate^2+suntergrund^2)
 
 x=data[[1]]
 
@@ -23,12 +29,12 @@ drawCI(x,rate,srate,xlab=expression(v / mms^-1),ylab=expression(r / s^-1))
  fit2=sixgaus(data.frame(x=x,y=rate,sy=srate),c(-8.05,8.05),weighted=TRUE,-5,-3,-0.5,1,3,5)
  plotsix(fit2,c(-8.05,8.05),col="blue",lwd=1.5,lty=2)
  A01=fit2['N1','Estimate']
- A02=fit2['N2','Estimate']+0.00015
+ A02=fit2['N2','Estimate']
  A03=fit2['N3','Estimate']
  A04=fit2['N4','Estimate']
  A05=fit2['N5','Estimate']
- A06=fit2['N6','Estimate']-0.0004
- C0=0.0286#fit2['C','Estimate']
+ A06=fit2['N6','Estimate']
+ C0=28.6#fit2['C','Estimate']
  mu01=fit2['mu1','Estimate']
  mu02=fit2['mu2','Estimate']
  mu03=fit2['mu3','Estimate']
@@ -51,5 +57,5 @@ drawCI(x,rate,srate,xlab=expression(v / mms^-1),ylab=expression(r / s^-1))
  fit3=sixvoigt(data.frame(x=x,y=rate,sy=srate),A01,A02,A03,A04,A05,A06,C0,mu01,mu02,mu03,mu04,mu05,mu06,sigma01,sigma02,sigma03,sigma04,sigma05,sigma06,gamma01,gamma02,gamma03,gamma04,gamma05,gamma06,weighted=TRUE)
  plotsixvoigt(fit3,c(-8.05,8.05),col="green",lwd=2.5,lty=1)
 
- legend(0,0.0272,c("Lorentzfit","Gaussfit","Voigtfit"),col=c("red","blue","green"),lty=c(3,2,1),lwd=c(1.5,1.5,2.5))
+ legend(0,27.2,c("Lorentzfit","Gaussfit","Voigtfit"),col=c("red","blue","green"),lty=c(3,2,1),lwd=c(1.5,1.5,2.5))
  

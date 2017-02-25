@@ -33,10 +33,10 @@ sixvoigt <- function(input,A01,A02,A03,A04,A05,A06,C0,mu01,mu02,mu03,mu04,mu05,m
   else
     err=1*input$y/input$y
   print(C0)
-  #plot(function(x){A01 * Voigt(x,mu01,sigma01,gamma01) + A02 * Voigt(x,mu02,sigma02,gamma02) + A03 * Voigt(x,mu03,sigma03,gamma03) + A04 * Voigt(x,mu04,sigma04,gamma04) + A05 * Voigt(x,mu05,sigma05,gamma05) + A06 * Voigt(x,mu06,sigma06,gamma06) + C0},-8.05,8.05,add=TRUE,col="yellow",n=10000)
+  plot(function(x){A01 * Voigt(x,mu01,sigma01,gamma01) + A02 * Voigt(x,mu02,sigma02,gamma02) + A03 * Voigt(x,mu03,sigma03,gamma03) + A04 * Voigt(x,mu04,sigma04,gamma04) + A05 * Voigt(x,mu05,sigma05,gamma05) + A06 * Voigt(x,mu06,sigma06,gamma06) + C0},-8.05,8.05,add=TRUE,col="yellow",n=10000)
   
   try({
-    fit=nlsLM(thevoigt,input,weights=1/err^2,start=list(A1=A01,A2=A02,A3=A03,A4=A04,A5=A05,A6=A06,C=C0,mu1=mu01,mu2=mu02,mu3=mu03,mu4=mu04,mu5=mu05,mu6=mu06,sigma1=sigma01,sigma2=sigma02,sigma3=sigma03,sigma4=sigma04,sigma5=sigma05,sigma6=sigma06,gamma1=gamma01,gamma2=gamma02,gamma3=gamma03,gamma4=gamma04,gamma5=gamma05,gamma6=gamma06))
+    fit=nlsLM(thevoigt,input,weights=1/err^2,start=list(A1=A01,A2=A02,A3=A03,A4=A04,A5=A05,A6=A06,C=C0,mu1=mu01,mu2=mu02,mu3=mu03,mu4=mu04,mu5=mu05,mu6=mu06,sigma1=sigma01,sigma2=sigma02,sigma3=sigma03,sigma4=sigma04,sigma5=sigma05,sigma6=sigma06,gamma1=gamma01,gamma2=gamma02,gamma3=gamma03,gamma4=gamma04,gamma5=gamma05,gamma6=gamma06), control = list(maxiter = 100))
     chiquadratndf=sum(summary(fit)[[2]]^2)/summary(fit)[[4]][[2]]
     fitdata=rbind(summary(fit)$parameters,c(chiquadratndf,0,0,0))
     return(fitdata)

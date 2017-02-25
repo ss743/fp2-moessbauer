@@ -16,20 +16,20 @@ an die Messdaten gelegt, wobei $A\cdot e^{-\lambda d}$ den Beitrag des Compton-U
 
 \gra[1]{compton-untergrund}{Messung der Transmission durch Aluminium in Abhängigkeit der Schichtdicke zur Bestimmung des Compton-Untergrunds\label{fig:comptonuntergrund}}
 
-Wir erhalten nun bei der Messung die in Abbildung \ref{fig:comptonuntergrund} dargestellten Messdaten. Die $y$-Fehler wurden aus den Poissonfehlern der Zählmessung berechnet: $s_r=r\cdot\frac{s_\text{Counts}}{\mathrm{Counts}}$. Für die Messung der Schichtdicken wurde ein Fehler von $s_{d,i}=0.1\,\si{mm}$ für eine Aluminiumplatte und damit $s=\sqrt{m}\cdot s_{d,i}$ mit der Anzahl $m$ der jeweils verwendeten Aluminiumplatten. Bei der Durchführung des Fits an Gleichung \ref{eq:dexpfit} erhalten wir folgende Parameter:
+Wir erhalten nun bei der Messung die in Abbildung \ref{fig:comptonuntergrund} dargestellten Messdaten. Die $y$-Fehler wurden aus den Poissonfehlern der Zählmessung berechnet: $s_r=r\cdot\frac{s_\text{Counts}}{\mathrm{Counts}}$. Für die Messung der Schichtdicken wurde ein Fehler von $s_{d,i}=0,1\,\si{mm}$ für eine Aluminiumplatte und damit $s=\sqrt{m}\cdot s_{d,i}$ mit der Anzahl $m$ der jeweils verwendeten Aluminiumplatten. Bei der Durchführung des Fits an Gleichung \ref{eq:dexpfit} erhalten wir folgende Parameter:
 
 \begin{align*}
-		A&=18.5\pm0.3\,\si{s^{-1}}\text{ ,}\\
-		B&=39.6\pm0.8\,\si{s^{-1}}\text{ ,}\\
-		\lambda&=0.043\pm0.002\,\si{mm^{-1}}\text{ ,}\\
-		\mu&=2.06\pm0.07\,\si{mm^{-1}}\\
+		A&=18,5\pm0,3\,\si{s^{-1}}\text{ ,}\\
+		B&=39,6\pm0,8\,\si{s^{-1}}\text{ ,}\\
+		\lambda&=0,043\pm0,002\,\si{mm^{-1}}\text{ ,}\\
+		\mu&=2,06\pm0,07\,\si{mm^{-1}}\\
 		\ \\
-		\text{mit }\frac{\chi^2}{\mathrm{ndf}}&=5.7\text{ .}
+		\text{mit }\frac{\chi^2}{\mathrm{ndf}}&=5,7\text{ .}
 \end{align*}
 
 Daraus erhalten wir nun als Ergebnis für den Compton-Untergrund:
 \begin{align}
-	r_\text{Untergrund}&=18.5\pm0.3\,\si{s^{-1}}\text{ .}
+	r_\text{Untergrund}&=18,5\pm0,3\,\si{s^{-1}}\text{ .}
 \end{align}
 
 \subsection{Abschwächung durch Plexiglas}
@@ -38,13 +38,107 @@ Die Absorberproben liegen in Plexiglashalterungen vor. Da das Plexiglas die $\ga
 
 Dabei wurde folgendes Messergebnis erzielt:
 \begin{align}
-	k_\text{Plexi}=\frac{r_\text{leer}}{r_\text{plexi}}&=1.243\pm0.010\text{ .}
+	k_\text{Plexi}=\frac{r_\text{leer}}{r_\text{plexi}}&=1,243\pm0,010\text{ .}
 \end{align}
 
 \subsection{Messungen für den Einlinienabsorber}
-Bei den Messungen für den Einlinienabsorber wurden die in Abbildung \ref{fig:einlinien} aufgetragenen Daten aufgenommen.
+\graX[1]{einlinien}{Messung der Transmission durch die Edelstahlprobe (Einlinienabsorber)}{Messung der Transmission durch die Edelstahlprobe (Einlinienabsorber). Hier ist die Zählrate $r$ über die Geschwindigkeit $v$ aufgetragen. \label{fig:einlinien}}
+Bei den Messungen für den Einlinienabsorber wurden die in Abbildung \ref{fig:einlinien} aufgetragenen Daten aufgenommen. An die Daten wurde zunächst eine Gaußfunktion
+\begin{align}
+	r_\mathrm{Gauss}(v)&=C+\frac{N}{\sqrt{2\pi}\sigma}\exp(-\frac{(v-\mu)^2}{1\sigma^2})\text{ ,}
+\end{align}
+eine Lorentzfunktion 
+\begin{align}
+	r_\mathrm{Lorentz}(v)&=D+\frac{C}{2}\left(2-\frac{\left(2\tau\cdot(v-\omega)\right)^2}{1+\left(2\tau\cdot(v-\omega)\right)^2}\right)
+\end{align}
+und anschließend eine Voigtfunktion 
+\begin{align}
+	r_\mathrm{Voigt}(v)&=\left(r_\mathrm{Gauss}*r_\mathrm{Lorentz}\right)(v)
+\end{align}
+gefittet. Dabei wurden folgende Fitparameter ermittelt:
+\begin{align*}
+	&\mathbf{r_\textbf{Gauss}}\textbf{:}&&\mathbf{r_\textbf{Lorentz}}\textbf{:}&&\mathbf{r_\textbf{Voigt}}\textbf{:}\\
+	C&=(28,76\pm0,04)\,\si{s^{-1}}&D&=(32,24\pm0,15)\,\si{s^{-1}}&C&=(28,82\pm0,06)\,\si{s^{-1}}
+	\\N&=-(2,21\pm0,11)\,\si{mms^{-2}}&C&=-(6,7\pm0,3)\,\si{s^{-1}}&A&=-(2,6\pm0,3)\,\si{mms^{-2}}
+	\\\mu&=(0,203\pm0,013)\,\si{mms^{-1}}&\omega&=(0,185\pm0,012)\,\si{mms^{-1}}&\mu&=(0,200\pm0,013)\,\si{mms^{-1}}
+	\\\sigma&=(0,302\pm0,014)\,\si{mms^{-1}}&\tau&=(1,66\pm0,11)\,\si{mm^{-1}s}&\sigma&=(0,22\pm0,05)\,\si{mms^{-1}}
+	\\&&&&\gamma&=(0,14\pm0,08)\\\ 
+	\\&\frac{\chi^2}{\mathrm{ndf}}=1,70&&\frac{\chi^2}{\mathrm{ndf}}=1,73&&\frac{\chi^2}{\mathrm{ndf}}=1,69
+\end{align*}
 
-\graX[1]{einlinien}{Messung der Transmission durch die Edelstahlprobe (Einlinienabsorber)}{Messung der Transmission durch die Edelstahlprobe (Einlinienabsorber) \label{fig:einlinien}}
+
+
 
 \subsection{Messungen für den Sechslinienabsorber}
-\gra[1]{sechslinien}{Messung der Transmission durch die Eisenprobe (Sechslinienabsorber) \label{fig:sechslinien}}
+\graX[1]{sechslinien}{Messung der Transmission durch die Eisenprobe (Sechslinienabsorber)}{Messung der Transmission durch die Eisenprobe (Sechslinienabsorber). Hier ist die Zählrate $r$ über die Geschwindigkeit $v$ aufgetragen. \label{fig:sechslinien}}
+
+Die für den Sechslinienabsorber erhaltenen Daten sind in Abbildung \ref{fig:sechslinien} aufgetragen. An diese Daten wurde eine sechsfache Gaußfunktion
+\begin{align}
+r_\mathrm{Gauss}^{n=6}(v)&=C+\sum_{i=1}^n\frac{N_i}{\sqrt{2\pi}\sigma_i}\exp(-\frac{(v-\mu_i)^2}{1\sigma_i^2})\text{ ,}\label{eq:sechsgaus}
+\end{align}
+eine sechsfache Lorentzfunktion 
+\begin{align}
+r_\mathrm{Lorentz}^{n=6}(v)&=D+\sum_{i=1}^n\frac{C_i}{2}\left(2-\frac{\left(2\tau_i\cdot(v-\omega_i)\right)^2}{1+\left(2\tau_i\cdot(v-\omega_i)\right)^2}\right)\label{eq:sechslorentz}
+\end{align}
+und anschließend eine sechsfache Voigtfunktion 
+\begin{align}
+r_\mathrm{Voigt}^{n=6}(v)&=\sum_{i=1}^n\left(r_{\mathrm{Gauss}, i}*r_{\mathrm{Lorentz}, i}\right)(v)\label{eq:sechsvoigt}
+\end{align}
+gefittet. Die hierbei erhaltenen Fitparameter sind in den Tabellen \ref{tab:sechsgaus} bis \ref{tab:sechsvoigt} aufgeführt.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l|ccc}
+		$i$&$N_i\,/\,\si{mms^{-2}}$&$\mu_i\,/\,\si{mms^{-1}}$&$\sigma_i\,/\,\si{mms^{-1}}$\\\hline
+		$1$&$-1,29\pm0,12$&$-5,24\pm0,03$&$0,33\pm0,04$\\
+		$2$&$-1,11\pm0,14$&$-2,95\pm0,03$&$0,24\pm0,04$\\
+		$3$&$-0,64\pm0,13$&$-0,55\pm0,06$&$0,26\pm0,06$\\
+		$4$&$-0,54\pm0,14$&$ 0,94\pm0,07$&$0,24\pm0,07$\\
+		$5$&$-0,95\pm0,12$&$ 3,21\pm0,03$&$0,31\pm0,05$\\
+		$6$&$-1,15\pm0,10$&$ 5,43\pm0,05$&$0,44\pm0,05$\\
+	\end{tabular}\\
+	\begin{align*}
+		C&=(28,46\pm0,03)\,\si{s^{-1}}\\
+		\frac{\chi^2}{\mathrm{ndf}}&=1,16
+	\end{align*}
+	\caption{Fitdaten des sechsfachen Gaußfits aus Abbildung \ref{fig:sechslinien} (siehe Gleichung \ref{eq:sechsgaus})}
+	\label{tab:sechsgaus}
+\end{table}
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l|ccc}
+		$i$&$C_i\,/\,\si{s^{-1}}$&$\omega_i\,/\,\si{mms^{-1}}$&$\tau_i\,/\,\si{mm^{-1}s}$\\\hline
+		$1$&$-2,9\pm0,3$&$-5,24\pm0,03$&$1,3\pm0,2$\\
+		$2$&$-2,4\pm0,3$&$-2,94\pm0,04$&$1,5\pm0,3$\\
+		$3$&$-1,5\pm0,3$&$-0,55\pm0,06$&$1,6\pm0,5$\\
+		$4$&$-1,2\pm0,3$&$ 0,96\pm0,08$&$1,7\pm0,7$\\
+		$5$&$-2,2\pm0,3$&$ 3,21\pm0,04$&$1,5\pm0,3$\\
+		$6$&$-2,7\pm0,2$&$ 5,44\pm0,04$&$1,01\pm0,15$\\
+	\end{tabular}\\
+	\begin{align*}
+	D&=(35,2\pm0,03)\,\si{s^{-1}}\\
+	\frac{\chi^2}{\mathrm{ndf}}&=1,19
+	\end{align*}
+	\caption{Fitdaten des sechsfachen Lorentzfits aus Abbildung \ref{fig:sechslinien} (siehe Gleichung \ref{eq:sechslorentz})}
+	\label{tab:sechslorentz}
+\end{table}
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l|cccc}
+		$i$&$N_i\,/\,\si{mms^{-2}}$&$\mu_i\,/\,\si{mms^{-1}}$&$\sigma_i\,/\,\si{mms^{-1}}$&$\gamma$\\\hline
+		$1$&$-1,1\pm0,3$&$-5,24\pm0,03$&$0,32\pm0,12$&$0,0\pm0,2$\\
+		$2$&$-1,0\pm0,2$&$-2,95\pm0,04$&$0,0\pm0,4$&$0,27\pm0,15$\\
+		$3$&$-0,6\pm0,3$&$-0,50\pm0,07$&$0\pm80$&$0,3\pm0,2$\\
+		$4$&$-0,11\pm0,15$&$ 0,98\pm0,07$&$0,5\pm0,3$&$-0,8\pm0,9$\\
+		$5$&$-1,2\pm0,3$&$ 3,24\pm0,05$&$0,1\pm0,4$&$0,3\pm0,2$\\
+		$6$&$-0,8\pm0,3$&$ 5,45\pm0,04$&$0,70\pm0,16$&$-0,6\pm0,5$\\
+	\end{tabular}\\
+	\begin{align*}
+		C&=(28,48\pm0,06)\,\si{s^{-1}}\\
+		\frac{\chi^2}{\mathrm{ndf}}&=1,13
+	\end{align*}
+	\caption{Fitdaten des sechsfachen Voigtfits aus Abbildung \ref{fig:sechslinien} (siehe Gleichung \ref{eq:sechsvoigt})}
+	\label{tab:sechsvoigt}
+\end{table}

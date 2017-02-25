@@ -11,6 +11,8 @@ par(mar=c(5,5,1,1))
 
 data = readTXT(paste("einlinien/einlinien2",sep=""))
 
+data[[2]]=data[[2]]*10^-3
+
 rate=data[[3]]/data[[2]]
 sdata=sqrt(data[[3]])
 srate=rate/sdata
@@ -30,4 +32,4 @@ gamma0=fit['omega','Estimate']
 fit3=voigtfit(data.frame(x=x,y=rate,sy=srate),A0,C0,mu0,sigma0,gamma0,weighted=TRUE)
 plotvoigt(fit3,c(-6,6),col="green",lwd=2.5,lty=1)
 
-legend(2,0.027,c("Lorentzfit","Gaussfit","Voigtfit"),col=c("red","blue","green"),lty=c(3,2,1),lwd=c(1.5,1.5,2.5))
+legend(2,27,c("Lorentzfit","Gaussfit","Voigtfit"),col=c("red","blue","green"),lty=c(3,2,1),lwd=c(1.5,1.5,2.5))
