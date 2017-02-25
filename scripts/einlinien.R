@@ -17,12 +17,22 @@ rate=data[[3]]/data[[2]]
 sdata=sqrt(data[[3]])
 srate=rate/sdata
 
+untergrund=18.5
+suntergrund=0.3
+rate=rate-untergrund
+srate=sqrt(srate^2+suntergrund^2)
+
+k=1.243
+sk=0.010
+srate=rate*k*sqrt((srate/rate)^2+(sk/k)^2)
+rate=rate*k
+
 x=data[[1]]
 
 drawCI(x,rate,srate,xlab=expression(v / mms^-1),ylab=expression(r / s^-1))
 fit=lorentzfit(data.frame(x=x,y=rate,sy=srate),neg=TRUE,weighted=TRUE)
 plotlorentz(fit,c(-6,6),lwd=1.5,lty=3)
-fit2=gausfit(data.frame(x=x,y=rate,sy=srate),c(-6,6),weighted=TRUE)
+fit2=gausfit(data.frame(x=x,y=rate,sy=srate),c(-6,6),weighted=TRUE,N0=-5)
 plotgaus(fit2,c(-6,6),col="blue",lwd=1.5,lty=2)
 A0=fit2['N','Estimate']
 C0=fit2['C','Estimate']

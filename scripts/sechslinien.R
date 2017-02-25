@@ -21,6 +21,11 @@ suntergrund=0.3
 rate=rate-untergrund
 srate=sqrt(srate^2+suntergrund^2)
 
+k=1.243
+sk=0.010
+srate=rate*k*sqrt((srate/rate)^2+(sk/k)^2)
+rate=rate*k
+
 x=data[[1]]
 
 drawCI(x,rate,srate,xlab=expression(v / mms^-1),ylab=expression(r / s^-1))
