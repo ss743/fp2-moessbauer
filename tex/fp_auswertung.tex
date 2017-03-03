@@ -56,7 +56,7 @@ Bei den Messungen für den Einlinienabsorber wurden die in Abbildung \ref{fig:ei
 \end{align}
 eine Lorentzfunktion 
 \begin{align}
-	r_\mathrm{Lorentz}(v)&=D+\frac{C}{2}\left(2-\frac{\left(2\tau\cdot(v-\omega)\right)^2}{1+\left(2\tau\cdot(v-\omega)\right)^2}\right)
+	r_\mathrm{Lorentz}(v)&=C+\frac{N}{2\pi}\frac{\gamma}{\left(v-\mu\right)^2+\frac14\gamma^2}
 \end{align}
 und anschließend eine Voigtfunktion 
 \begin{align}
@@ -65,11 +65,11 @@ und anschließend eine Voigtfunktion
 gefittet. Dabei wurden folgende Fitparameter ermittelt:
 \begin{align*}
 	&\mathbf{r_\textbf{Gauss}}\textbf{:}&&\mathbf{r_\textbf{Lorentz}}\textbf{:}&&\mathbf{r_\textbf{Voigt}}\textbf{:}\\
-	C&=(12,76\pm0,05)\,\si{s^{-1}}&D&=(17,08\pm0,19)\,\si{s^{-1}}&C&=(12,84\pm0,08)\,\si{s^{-1}}
-	\\N&=-(2,75\pm0,13)\,\si{mms^{-2}}&C&=-(8,3\pm0,3)\,\si{s^{-1}}&A&=-(3,2\pm0,4)\,\si{mms^{-2}}
+	C&=(12,76\pm0,05)\,\si{s^{-1}}&C&=(12,94\pm0,06)\,\si{s^{-1}}&C&=(12,84\pm0,08)\,\si{s^{-1}}
+	\\N&=-(2,75\pm0,13)\,\si{mms^{-2}}&N&=-(3,9\pm0,2)\,\si{mms^{-2}}&N&=-(3,2\pm0,4)\,\si{mms^{-2}}
 	\\\mu&=(0,204\pm0,013)\,\si{mms^{-1}}&\omega&=(0,186\pm0,012)\,\si{mms^{-1}}&\mu&=(0,201\pm0,013)\,\si{mms^{-1}}
-	\\\sigma&=(0,303\pm0,014)\,\si{mms^{-1}}&\tau&=(1,66\pm0,12)\,\si{mm^{-1}s}&\sigma&=(0,22\pm0,05)\,\si{mms^{-1}}
-	\\&&&&\gamma&=(0,14\pm0,08)\\\ 
+	\\\sigma&=(0,303\pm0,014)\,\si{mms^{-1}}&\gamma&=(0,60\pm0,04)\,\si{mms^{-1}}&\sigma&=(0,22\pm0,05)\,\si{mms^{-1}}
+	\\&&&&\gamma&=(0,13\pm0,08)\,\si{mms^{-1}}\\\ 
 	\\&\frac{\chi^2}{\mathrm{ndf}}=0,55&&\frac{\chi^2}{\mathrm{ndf}}=0,56&&\frac{\chi^2}{\mathrm{ndf}}=0,55
 \end{align*}
 
@@ -85,7 +85,7 @@ r_\mathrm{Gauss}^{n=6}(v)&=C+\sum_{i=1}^n\frac{N_i}{\sqrt{2\pi}\sigma_i}\exp(-\f
 \end{align}
 eine sechsfache Lorentzfunktion 
 \begin{align}
-r_\mathrm{Lorentz}^{n=6}(v)&=D+\sum_{i=1}^n\frac{C_i}{2}\left(2-\frac{\left(2\tau_i\cdot(v-\omega_i)\right)^2}{1+\left(2\tau_i\cdot(v-\omega_i)\right)^2}\right)\label{eq:sechslorentz}
+r_\mathrm{Lorentz}^{n=6}(v)&=C+\sum_{i=1}^n\frac{N_i}{2\pi}\frac{\gamma_i}{\left(v-\mu_i\right)^2+\frac14\gamma_i^2}\label{eq:sechslorentz}
 \end{align}
 und anschließend eine sechsfache Voigtfunktion 
 \begin{align}
@@ -115,16 +115,16 @@ gefittet. Die hierbei erhaltenen Fitparameter sind in den Tabellen \ref{tab:sech
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{l|ccc}
-		$i$&$C_i\,/\,\si{s^{-1}}$&$\omega_i\,/\,\si{mms^{-1}}$&$\tau_i\,/\,\si{mm^{-1}s}$\\\hline
-		$1$&$-3,7\pm0,3$&$-5,24\pm0,03$&$1,3\pm0,2$\\
-		$2$&$-3,0\pm0,4$&$-2,94\pm0,04$&$1,5\pm0,3$\\
-		$3$&$-1,9\pm0,4$&$-0,55\pm0,06$&$1,6\pm0,5$\\
-		$4$&$-1,5\pm0,4$&$ 0,96\pm0,08$&$1,7\pm0,7$\\
-		$5$&$-2,7\pm0,4$&$ 3,21\pm0,04$&$1,5\pm0,3$\\
-		$6$&$-3,4\pm0,3$&$ 5,44\pm0,04$&$-1,01\pm0,15$\\
+		$i$&$N_i\,/\,\si{mms^{-2}}$&$\mu_i\,/\,\si{mms^{-1}}$&$\gamma_i\,/\,\si{mms^{-1}}$\\\hline
+		$1$&$-2,2\pm0,3$&$-5,24\pm0,03$&$0,77\pm0,12$\\
+		$2$&$-1,6\pm0,3$&$-2,94\pm0,04$&$0,68\pm0,13$\\
+		$3$&$-1,0\pm0,2$&$-0,55\pm0,06$&$0,6 \pm0,2$\\
+		$4$&$-0,7\pm0,2$&$ 0,96\pm0,08$&$0,6 \pm0,2$\\
+		$5$&$-1,5\pm0,3$&$ 3,21\pm0,04$&$0,68\pm0,14$\\
+		$6$&$-2,6\pm0,4$&$ 5,44\pm0,04$&$0,99\pm0,15$\\
 	\end{tabular}\\
 	\begin{align*}
-	D&=(20,7\pm0,5)\,\si{s^{-1}}\\
+	D&=(12,61\pm0,06)\,\si{s^{-1}}\\
 	\frac{\chi^2}{\mathrm{ndf}}&=0,39
 	\end{align*}
 	\caption{Fitdaten des sechsfachen Lorentzfits aus Abbildung \ref{fig:sechslinien} (siehe Gleichung \ref{eq:sechslorentz})}
@@ -134,13 +134,13 @@ gefittet. Die hierbei erhaltenen Fitparameter sind in den Tabellen \ref{tab:sech
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{l|cccc}
-		$i$&$N_i\,/\,\si{mms^{-2}}$&$\mu_i\,/\,\si{mms^{-1}}$&$\sigma_i\,/\,\si{mms^{-1}}$&$\gamma$\\\hline
+		$i$&$N_i\,/\,\si{mms^{-2}}$&$\mu_i\,/\,\si{mms^{-1}}$&$\sigma_i\,/\,\si{mms^{-1}}$&$\gamma_i\,/\,\si{mms^{-1}}$\\\hline
 		$1$&$-1,3\pm0,4$&$-5,24\pm0,03$&$0,31 \pm0,12$&$0,0 \pm0,2$\\
 		$2$&$-1,3\pm0,3$&$-2,96\pm0,04$&$0,0  \pm1,5$ &$0,28\pm0,15$\\
-		$3$&$-0,7\pm0,2$&$-0,51\pm0,07$&$0    \pm60$  &$0,27 \pm0,10$\\
-		$4$&$-0,16\pm0,19$&$ 0,98\pm0,07$&$0,5\pm0,2$ &$-0,7\pm0,8$\\
+		$3$&$-0,7\pm0,2$&$-0,51\pm0,07$&$0    \pm60$  &$0,3 \pm0,2$\\
+		$4$&$-0,16\pm0,19$&$ 0,98\pm0,07$&$0,5\pm0,2$ &$-0,6\pm0,8$\\
 		$5$&$-1,5\pm0,4$&$ 3,24\pm0,05$&$0,1  \pm0,4$ &$0,3 \pm0,2$\\
-		$6$&$-1,1\pm0,4$&$ 5,45\pm0,04$&$0,70 \pm0,16$&$-0,6\pm0,4$\\
+		$6$&$-1,1\pm0,4$&$ 5,45\pm0,04$&$0,69 \pm0,16$&$0,6\pm0,4$\\
 	\end{tabular}\\
 	\begin{align*}
 		C&=(12,41\pm0,07)\,\si{s^{-1}}\\

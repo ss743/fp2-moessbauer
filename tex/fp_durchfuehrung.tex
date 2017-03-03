@@ -10,31 +10,34 @@
 		\draw[line width=2] (-1,-1) rectangle (1,1);
 		\draw[line width=2] (3,-1) rectangle (5,1);
 		\draw[line width=2] (7,-1) rectangle (9,1);
-		\draw[line width=2] (11,-1) rectangle (13,1);
+		\draw[line width=2] (15,-1) rectangle (17,1);
 		\draw[line width=2] (3,-5) rectangle (5,-3);
 		\draw[line width=2] (7,-5) rectangle (9,-3);
 		\draw[line width=2] (11,-5) rectangle (13,-3);
 		\draw[line width=2] (15,-5) rectangle (17,-3);
+		\draw[line width=2] (15,-7) rectangle (17,-9);
 		
 		\draw[line width=2,->] (1,0) --(3,0);
 		\draw[line width=2,->] (5,0) --(7,0);
-		\draw[line width=2,->] (9,0) --(11,0);
+		\draw[line width=2,->] (9,0) --(15,0);
 		\draw[line width=2,->] (5,-4) --(7,-4);
 		\draw[line width=2,->] (9,-4) --(11,-4);
 		\draw[line width=2,->] (13,-4) --(15,-4);
 		\draw[line width=2,->] (4,-1) --(4,-3);
 		\draw[line width=2,->] (8,-1) --(8,-3);
-		\draw[line width=2,->] (12,-1) --(12,-3);
+		\draw[line width=2,->] (16,-1) --(16,-3);
+		\draw[line width=2,->] (16,-5) --(16,-7);
 		
 		\node at (0,0) {PM};
 		\node at (4,0) {MA};
 		\node at (8,0) {SCA};
-		\node at (12,0) {Zähler};
+		\node at (16,0) {Zähler};
 		\node at (4,-4) {Delay};
 		\node at (8,-3.8) {Linear};
 		\node at (8,-4.2) {Gate};
-		\node at (12,-4) {PC};
-		\node at (16,-4) {Motor};
+		\node at (12,-4) {MCA};
+		\node at (16,-4) {PC};
+		\node at (16,-8) {Motor};
 		
 		\node[color=red,fill=white] at (5,-1.38) {\small unipolar};
 		\node[color=red,fill=white] at (9,-1.38) {\small positive};
@@ -48,6 +51,29 @@
 	\subsection{Eichmessungen}
 	
 	Zu Beginn des Versuchs werden mit Hilfe verschiedener Metalle, deren Emissionsspektren bekannt sind, Eichmessungen durchgeführt. Dabei werden die Emissionsspektren aufgenommen und die bekannten Linien in diesen Spektren identifiziert. Anschließend wird daraus ein Umrechnungsfaktor zwischen Channels und Energie berechnet, und damit der zu beobachtende $14,4\,\si{keV}$-Peak von $^{57}\mathrm{Fe}$ identifiziert. Nun wird das Energiefenster des SCAs auf den $14.4\,\si{kev}$-Peak gesetzt, um nur Photonen mit dieser Energie zu detektieren.
+	
+	\begin{figure}[h!]
+		\centering
+		\begin{tikzpicture}[scale=0.9]
+		\draw[line width=2] (-1,-1) rectangle (1,1);
+		\draw[line width=2] (3,-1) rectangle (5,1);
+		\draw[line width=2] (7,-1) rectangle (9,1);
+		\draw[line width=2] (11,-1) rectangle (13,1);
+		
+		\draw[line width=2,->] (1,0) --(3,0);
+		\draw[line width=2,->] (5,0) --(7,0);
+		\draw[line width=2,->] (9,0) --(11,0);
+		
+		\node at (0,0) {PM};
+		\node at (4,0) {MA};
+		\node at (8,0) {MCA};
+		\node at (12,0) {PC};
+		
+		
+		\end{tikzpicture}
+		\caption[Schematische Darstellung des Versuchsaufbaus für die Eichmessung]{Schematische Darstellung des Versuchsaufbaus für die Eichmessung}
+		\label{fig:aufbaueich}
+	\end{figure}
 	
 	\subsection{Untergrundmessungen}
 	

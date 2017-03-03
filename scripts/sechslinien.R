@@ -53,12 +53,18 @@ drawCI(x,rate,srate,xlab=expression(v / mms^-1),ylab=expression(r / s^-1))
  sigma05=fit2['sig5','Estimate']
  sigma06=fit2['sig6','Estimate']
  gamma=0.1
- gamma01=gamma#fit['omega1','Estimate']
- gamma02=gamma#fit['omega2','Estimate']
- gamma03=gamma#fit['omega3','Estimate']
- gamma04=gamma#fit['omega4','Estimate']
- gamma05=gamma#fit['omega5','Estimate']
- gamma06=gamma#fit['omega6','Estimate']
+ gamma01=fit['tau1','Estimate']#gamma#fit['omega1','Estimate']
+ gamma02=fit['tau2','Estimate']#gamma#fit['omega2','Estimate']
+ gamma03=fit['tau3','Estimate']#gamma#fit['omega3','Estimate']
+ gamma04=fit['tau4','Estimate']#gamma#fit['omega4','Estimate']
+ gamma05=fit['tau5','Estimate']#gamma#fit['omega5','Estimate']
+ gamma06=fit['tau6','Estimate']#gamma#fit['omega6','Estimate']
+ #gamma01=gamma#fit['omega1','Estimate']
+ #gamma02=gamma#fit['omega2','Estimate']
+ #gamma03=gamma#fit['omega3','Estimate']
+ #gamma04=gamma#fit['omega4','Estimate']
+ #gamma05=gamma#fit['omega5','Estimate']
+ #gamma06=gamma#fit['omega6','Estimate']
  fit3=sixvoigt(data.frame(x=x,y=rate,sy=srate),A01,A02,A03,A04,A05,A06,C0,mu01,mu02,mu03,mu04,mu05,mu06,sigma01,sigma02,sigma03,sigma04,sigma05,sigma06,gamma01,gamma02,gamma03,gamma04,gamma05,gamma06,weighted=TRUE)
  plotsixvoigt(fit3,c(-8.05,8.05),col="green",lwd=2.5,lty=1)
 

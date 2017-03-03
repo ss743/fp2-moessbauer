@@ -43,3 +43,24 @@ fit3=voigtfit(data.frame(x=x,y=rate,sy=srate),A0,C0,mu0,sigma0,gamma0,weighted=T
 plotvoigt(fit3,c(-6,6),col="green",lwd=2.5,lty=1)
 
 legend(2,27,c("Lorentzfit","Gaussfit","Voigtfit"),col=c("red","blue","green"),lty=c(3,2,1),lwd=c(1.5,1.5,2.5))
+
+sigma=fit3['sigma','Estimate']
+ssigma=fit3['sigma','Std. Error']
+gamma=fit3['gamma','Estimate']
+sgamma=fit3['gamma','Std. Error']
+
+fg=2*sigma*sqrt(2*log(2,exp(1)))
+fl=2*gamma
+
+fv=0.5346*fl+sqrt(0.2166*fl^2+fg^2)
+
+sfg=2*ssigma*sqrt(2*log(2,exp(1)))
+sfl=2*sgamma
+sfv=fv*sqrt(0.02^2+(sfg/fg)^2+(sfl/fl)^2)
+
+gammaL=fit['tau','Estimate']
+sgammaL=fit['tau','Std. Error']
+
+fL=2*gammaL
+
+sfL=2*sgammaL

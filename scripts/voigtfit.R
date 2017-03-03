@@ -14,7 +14,7 @@ voigtfit <- function(input,A0,C0,mu0,sigma0,gamma0,weighted=FALSE) {
     err=1*input$y/input$y
   
   try({
-    fit=nlsLM(thevoigt,input,weights=1/err^2,start=list(A=A0,C=C0,mu=mu0,sigma=sigma0,gamma=gamma0))
+    fit=nlsLM(thevoigt,input,weights=1/err^2,start=list(A=A0,C=C0,mu=mu0,sigma=sigma0,gamma=gamma0),control=nls.control(maxiter=100))
     chiquadratndf=sum(summary(fit)[[2]]^2)/summary(fit)[[4]][[2]]
     fitdata=rbind(summary(fit)$parameters,c(chiquadratndf,0,0,0))
     return(fitdata)

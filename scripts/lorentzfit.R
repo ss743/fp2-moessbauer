@@ -2,7 +2,8 @@ library("minpack.lm")
 
 lorentzfit<-function(input,neg=FALSE,weighted=FALSE){
   
-  lorentz <- y~D+C/2*(2-(2*(x-omega)*tau)^2/(1+(2*(x-omega)*tau)^2))
+  #lorentz <- y~D+C/2*(2-(2*(x-omega)*tau)^2/(1+(2*(x-omega)*tau)^2))
+  lorentz <- y~D  + C*1/(2*pi)*tau/((x-omega)^2+(1/2*tau)^2)
   
   D0=max(input$y)
   C0=min(input$y)-max(input$y)
@@ -11,10 +12,11 @@ lorentzfit<-function(input,neg=FALSE,weighted=FALSE){
   
   if(neg){
     C0=max(input$y)-min(input$y)
-    D0=max(input$y)-0.0045
+    D0=max(input$y)
     omega0=input$x[which.min(input$y)]
     
   }
+  
   
   #print(input)
   #print(c(D0,C0,omega0,tau0))
@@ -38,7 +40,8 @@ lorentzfit<-function(input,neg=FALSE,weighted=FALSE){
 
 sixlorentz<-function(input,neg=FALSE,weighted=FALSE,omega01,omega02,omega03,omega04,omega05,omega06){
   
-  lorentz <- y~D+C1/2*(2-(2*(x-omega1)*tau1)^2/(1+(2*(x-omega1)*tau1)^2))+C2/2*(2-(2*(x-omega2)*tau2)^2/(1+(2*(x-omega2)*tau2)^2))+C3/2*(2-(2*(x-omega3)*tau3)^2/(1+(2*(x-omega3)*tau3)^2))+C4/2*(2-(2*(x-omega4)*tau4)^2/(1+(2*(x-omega4)*tau4)^2))+C5/2*(2-(2*(x-omega5)*tau5)^2/(1+(2*(x-omega5)*tau5)^2))+C6/2*(2-(2*(x-omega6)*tau6)^2/(1+(2*(x-omega6)*tau6)^2))
+  lorentz <- y~D  + C1*1/(2*pi)*tau1/((x-omega1)^2+(1/2*tau1)^2)  + C2*1/(2*pi)*tau2/((x-omega2)^2+(1/2*tau2)^2)  + C3*1/(2*pi)*tau3/((x-omega3)^2+(1/2*tau3)^2)  + C4*1/(2*pi)*tau4/((x-omega4)^2+(1/2*tau4)^2)  + C5*1/(2*pi)*tau5/((x-omega5)^2+(1/2*tau5)^2)  + C6*1/(2*pi)*tau6/((x-omega6)^2+(1/2*tau6)^2)
+  #+C1/2*(2-(2*(x-omega1)*tau1)^2/(1+(2*(x-omega1)*tau1)^2))+C2/2*(2-(2*(x-omega2)*tau2)^2/(1+(2*(x-omega2)*tau2)^2))+C3/2*(2-(2*(x-omega3)*tau3)^2/(1+(2*(x-omega3)*tau3)^2))+C4/2*(2-(2*(x-omega4)*tau4)^2/(1+(2*(x-omega4)*tau4)^2))+C5/2*(2-(2*(x-omega5)*tau5)^2/(1+(2*(x-omega5)*tau5)^2))+C6/2*(2-(2*(x-omega6)*tau6)^2/(1+(2*(x-omega6)*tau6)^2))
   
   
   D0=max(input$y)
@@ -103,7 +106,7 @@ plotlorentz<-function(fitdata,bereich,lwd=1,lty=1){
   omega<-fitdata["omega","Estimate"]
   tau<-fitdata["tau","Estimate"]
   
-  try({plot(function(x){D+C/2*(2-(2*(x-omega)*tau)^2/(1+(2*(x-omega)*tau)^2))},-6,6,add=TRUE,col="red",n=10000,lwd=lwd,lty=lty)})
+  try({plot(function(x){D + C*1/(2*pi)*tau/((x-omega)^2+(1/2*tau)^2)},-6,6,add=TRUE,col="red",n=10000,lwd=lwd,lty=lty)})
 }
 
 plotsixlorentz<-function(fitdata,bereich,lwd=1,lty=1){
@@ -127,7 +130,7 @@ plotsixlorentz<-function(fitdata,bereich,lwd=1,lty=1){
   omega6<-fitdata["omega6","Estimate"]
   tau6<-fitdata["tau6","Estimate"]
   
-  try({plot(function(x){D+C1/2*(2-(2*(x-omega1)*tau1)^2/(1+(2*(x-omega1)*tau1)^2))+C2/2*(2-(2*(x-omega2)*tau2)^2/(1+(2*(x-omega2)*tau2)^2))+C3/2*(2-(2*(x-omega3)*tau3)^2/(1+(2*(x-omega3)*tau3)^2))+C4/2*(2-(2*(x-omega4)*tau4)^2/(1+(2*(x-omega4)*tau4)^2))+C5/2*(2-(2*(x-omega5)*tau5)^2/(1+(2*(x-omega5)*tau5)^2))+C6/2*(2-(2*(x-omega6)*tau6)^2/(1+(2*(x-omega6)*tau6)^2))},bereich[1],bereich[2],add=TRUE,col="red",n=10000,lwd=lwd,lty=lty)})
+  try({plot(function(x){D  + C1*1/(2*pi)*tau1/((x-omega1)^2+(1/2*tau1)^2)  + C2*1/(2*pi)*tau2/((x-omega2)^2+(1/2*tau2)^2)  + C3*1/(2*pi)*tau3/((x-omega3)^2+(1/2*tau3)^2)  + C4*1/(2*pi)*tau4/((x-omega4)^2+(1/2*tau4)^2)  + C5*1/(2*pi)*tau5/((x-omega5)^2+(1/2*tau5)^2)  + C6*1/(2*pi)*tau6/((x-omega6)^2+(1/2*tau6)^2)},bereich[1],bereich[2],add=TRUE,col="red",n=10000,lwd=lwd,lty=lty)})
 }
 
 
