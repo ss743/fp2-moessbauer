@@ -52,7 +52,7 @@ Dabei wurde folgendes Messergebnis erzielt:
 \graX[1]{einlinien}{Messung der Transmission durch die Edelstahlprobe (Einlinienabsorber)}{Messung der Transmission durch die Edelstahlprobe (Einlinienabsorber). Hier ist die Zählrate $r$ über die Geschwindigkeit $v$ aufgetragen. \label{fig:einlinien}}
 Bei den Messungen für den Einlinienabsorber wurden die in Abbildung \ref{fig:einlinien} aufgetragenen Daten aufgenommen. An die Daten wurde zunächst eine Gaußfunktion
 \begin{align}
-	r_\mathrm{Gauss}(v)&=C+\frac{N}{\sqrt{2\pi}\sigma}\exp(-\frac{(v-\mu)^2}{1\sigma^2})\text{ ,}
+	r_\mathrm{Gauss}(v)&=C+\frac{N}{\sqrt{2\pi}\sigma}\exp(-\frac{(v-\mu)^2}{2\sigma^2})\text{ ,}
 \end{align}
 eine Lorentzfunktion 
 \begin{align}
@@ -81,7 +81,7 @@ gefittet. Dabei wurden folgende Fitparameter ermittelt:
 
 Die für den Sechslinienabsorber erhaltenen Daten sind in Abbildung \ref{fig:sechslinien} aufgetragen. An diese Daten wurde eine sechsfache Gaußfunktion
 \begin{align}
-r_\mathrm{Gauss}^{n=6}(v)&=C+\sum_{i=1}^n\frac{N_i}{\sqrt{2\pi}\sigma_i}\exp(-\frac{(v-\mu_i)^2}{1\sigma_i^2})\text{ ,}\label{eq:sechsgaus}
+r_\mathrm{Gauss}^{n=6}(v)&=C+\sum_{i=1}^n\frac{N_i}{\sqrt{2\pi}\sigma_i}\exp(-\frac{(v-\mu_i)^2}{2\sigma_i^2})\text{ ,}\label{eq:sechsgaus}
 \end{align}
 eine sechsfache Lorentzfunktion 
 \begin{align}

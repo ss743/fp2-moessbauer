@@ -31,9 +31,11 @@ draw <- function(x,y,xlab="x",ylab="y",col="black",scol="darkgrey"){
 roundfunc <- function(vals){
   x=vals[1]
   xerr=vals[2]
+  #print(vals)
   n=0
   for(i in -20:20){
     a=round(xerr,i)*10^i
+    #print(a)
     if(a==1){
       n=i+1
       return(c(round(x,n),round(xerr,n)))
@@ -53,4 +55,52 @@ roundfunc <- function(vals){
   }
   return(vals)
   
+}
+
+toenergy <- function(val){
+  c=2.998*10^8*10^3#mm
+  E0=14.412*10^3
+  
+  return(E0*val/c)
+}
+
+add <- function(vec1,vec2){
+  res=c()
+  res[1]=vec1[1]+vec2[1]
+  res[2]=sqrt(vec1[2]^2+vec2[2]^2)
+  return(res)
+}
+substract <- function(vec1,vec2){
+  res=c()
+  res[1]=vec1[1]-vec2[1]
+  res[2]=sqrt(vec1[2]^2+vec2[2]^2)
+  return(res)
+}
+divide <- function(vec1,vec2){
+  res=c()
+  res[1]=vec1[1]/vec2[1]
+  res[2]=abs(res[1])*sqrt((vec1[2]/vec1[1])^2+(vec2[2]/vec2[1])^2)
+  return(res)
+}
+multiplicate <- function(vec1,vec2){
+  res=c()
+  res[1]=vec1[1]*vec2[1]
+  res[2]=abs(res[1])*sqrt((vec1[2]/vec1[1])^2+(vec2[2]/vec2[1])^2)
+  return(res)
+}
+
+mean <- function(vec1,vec2){
+  res=c()
+  res[1]=(vec1[1]/vec1[2]^2+vec2[1]/vec2[2]^2)/(1/vec1[2]^2+1/vec2[2]^2)
+  res[2]=sqrt(1/(1/vec1[2]^2+1/vec2[2]^2))
+  
+  return(res)
+}
+
+mean3 <- function(vec1,vec2,vec3){
+  res=c()
+  res[1]=(vec1[1]/vec1[2]^2+vec2[1]/vec2[2]^2+vec3[1]/vec3[2]^2)/(1/vec1[2]^2+1/vec2[2]^2+1/vec3[2]^2)
+  res[2]=sqrt(1/(1/vec1[2]^2+1/vec2[2]^2+1/vec3[2]^2))
+  
+  return(res)
 }

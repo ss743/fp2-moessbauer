@@ -52,6 +52,9 @@ plotvoigt<-function(fitdata,bereich,col="red",lwd=1,lty=1){
   gamma<-fitdata["gamma","Estimate"]
   
   try({plot(function(x){A * Voigt(x,mu,sigma,gamma) + C},bereich[1],bereich[2],add=TRUE,col=col,n=10000,lwd=lwd,lty=lty)})
+  #print(optimize(function(x){A * Voigt(x,mu,sigma,gamma) + C},interval=c(-6,6)))
+  #print(optimize(function(x){A * Voigt(x,mu,sigma,gamma) + C},interval=c(-6,6),maximum=TRUE))
+  print(A * Voigt(mu,mu,sigma,gamma) + C)
 }
 
 plotsixvoigt<-function(fitdata,bereich,col="red",lwd=1,lty=1){
