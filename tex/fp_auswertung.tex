@@ -48,7 +48,13 @@ Dabei wurde folgendes Messergebnis erzielt:
 	k_\text{Plexi}=\frac{r_\text{leer}}{r_\text{plexi}}&=1,243\pm0,010\text{ .}
 \end{align}
 
-\subsection{Messungen für den Einlinienabsorber}
+\subsection{Energieumrechnung}
+Die Geschwindigkeiten werden mit Hilfe der folgenden Formel in Energien umgerechnet:
+\begin{align}
+	E=E_0\frac{v}{c}\text{ .}\label{vtoE}
+\end{align}
+
+\subsection{Einlinienabsorber}\label{einlinien}
 \graX[1]{einlinien}{Messung der Transmission durch die Edelstahlprobe (Einlinienabsorber)}{Messung der Transmission durch die Edelstahlprobe (Einlinienabsorber). Hier ist die Zählrate $r$ über die Geschwindigkeit $v$ aufgetragen. \label{fig:einlinien}}
 Bei den Messungen für den Einlinienabsorber wurden die in Abbildung \ref{fig:einlinien} aufgetragenen Daten aufgenommen. An die Daten wurde zunächst eine Gaußfunktion
 \begin{align}
@@ -73,10 +79,17 @@ gefittet. Dabei wurden folgende Fitparameter ermittelt:
 	\\&\frac{\chi^2}{\mathrm{ndf}}=0,55&&\frac{\chi^2}{\mathrm{ndf}}=0,56&&\frac{\chi^2}{\mathrm{ndf}}=0,55
 \end{align*}
 
+\subsubsection{Isomerieverschiebung}
+Die in Abschnitt \ref{Isomerie} beschriebene Isomerieverschiebung kann aus der Position des Peaks bestimmt werden. Die Isomerieverschiebung wird durch die Abweichung des Peaks von der Energie $E_0$, also der Geschwindigkeit $v_0=0$ bestimmt. Aus dem Voigt-Fit in Abschnitt \ref{einlinien} wird die Position $\mu$ des Peaks abgelesen und mit Hilfe von Gleichung \ref{vtoE} in Energie umgerechnet. Daraus erhalten wir für die Isomerieverschiebung:
+\begin{align}
+	E_\mathrm{iso}=
+\end{align}
+\subsubsection{Linienbreite und Lebensdauer}
+\subsubsection{Debye-Waller-Faktor}
 
 
 
-\subsection{Messungen für den Sechslinienabsorber}
+\subsection{Sechslinienabsorber}
 \graX[1]{sechslinien}{Messung der Transmission durch die Eisenprobe (Sechslinienabsorber)}{Messung der Transmission durch die Eisenprobe (Sechslinienabsorber). Hier ist die Zählrate $r$ über die Geschwindigkeit $v$ aufgetragen. \label{fig:sechslinien}}
 
 Die für den Sechslinienabsorber erhaltenen Daten sind in Abbildung \ref{fig:sechslinien} aufgetragen. An diese Daten wurde eine sechsfache Gaußfunktion
