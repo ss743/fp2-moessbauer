@@ -82,9 +82,26 @@ gefittet. Dabei wurden folgende Fitparameter ermittelt:
 \subsubsection{Isomerieverschiebung}
 Die in Abschnitt \ref{Isomerie} beschriebene Isomerieverschiebung kann aus der Position des Peaks bestimmt werden. Die Isomerieverschiebung wird durch die Abweichung des Peaks von der Energie $E_0$, also der Geschwindigkeit $v_0=0$ bestimmt. Aus dem Voigt-Fit in Abschnitt \ref{einlinien} wird die Position $\mu$ des Peaks abgelesen und mit Hilfe von Gleichung \ref{vtoE} in Energie umgerechnet. Daraus erhalten wir für die Isomerieverschiebung:
 \begin{align}
-	E_\mathrm{iso}=
+	E_\mathrm{iso}&=E_0\frac{\mu}{c}=(9,7\pm0,9)\,\si{neV}
 \end{align}
 \subsubsection{Linienbreite und Lebensdauer}
+Die gemessene Linienbreite ergibt sich aus der natürlichen Linienbreite, welche gemessen werden soll und der relativen Linienverbreiterung durch den endlich dicken Absorber. Die natürliche Linienbreite lässt sich durch eine Lorentz-Funktion, die relative Linienverbreiterung durch die Faltung einer Gauß-Funktion an der Lorentz-Funktion beschreiben (siehe Abschnitt \ref{lebensdauer}). Die Faltung der Lorentz- und der Gauß-Funktion ergibt eine Voigt-Funktion, welche an die Daten gefittet wurde.
+\paragraph{Berechnung aus dem Lorentz-Anteil des Voigt-Fits}
+Zunächst wird zum Berechnen der natürlichen Linienbreite $\Gamma$ der Lorentz-Anteil des Voigt-Fits verwendet. Dieser ergibt sich aus dem Fit-Parameter $\gamma$ des Voigt-Fits. Die natürliche Linienbreite $\Gamma$ berechnet sich nun mit Hilfe der Energieumrechnung in Gleichung \ref{vtoE} folgendermaßen:
+\begin{align}
+	\Gamma&=E_0\frac{\mu}{c}=(6\pm4)\,\si{neV}\text{ .}
+\end{align}
+Daraus berechnen sich die Lebensdauer und die Halbwertszeit des $14,4\,\si{keV}$-Zustand folgendermaßen:
+\begin{align}
+	\tau&=(110\pm70)\,\si{ns}\\
+	T_{\frac12}&=(80\pm50)\,\si{ns}
+\end{align}
+\paragraph{Berechnung aus der Linienbreite mit Hilfe der effektiven Absorberdicke}
+Als zweite Möglichkeit zur Berechnung der natürlichen Linienbreite lässt sich die relative Linienverbreiterung aus der effektiven Absorberdicke berechnen. Anschließend kann die natürliche Linienbreite aus der gesamten Linienbreite und der relativen Linienverbreitung berechnet werden. Die effektive Absorberdicke lässt sich auf folgende Art und Weise berechnen \cite{anleitung}:
+\begin{align}
+	T_A&=f_An_A\beta\sigma_0d_A=6,1\pm0,7\text{ .}
+\end{align}
+Dabei ist $f_A$ der Debye-Waller-Faktor, $n_A$ die Teilchendichte, $d_A$ die Dicke des Absorbers, $\beta$ der Anteil von $^{57}\mathrm{Fe}$ im Isotopengemisch und $\sigma_0=2\pi\lambdabar^2\cdot\frac{2I^*+1}{2I+1}\cdot\frac1{1+\alpha}$ der Wirkungsquerschnitt.
 \subsubsection{Debye-Waller-Faktor}
 
 
