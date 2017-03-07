@@ -9,7 +9,7 @@ I&= I_0\cdot e^{-\mu x}
 \mu &= \mu_{photo} + \mu_{Compton} + \mu_{Paar}
 \end{align}
 
-Die einzelnen Prozesse werden im folgenden Erklärt.\cite{demtröder}
+Die einzelnen Prozesse werden im folgenden Erklärt.\cite{demtroeder}
 
 \begin{itemize}
 \item \textbf{Photo-Effekt}
@@ -26,11 +26,11 @@ Bei der Paarbildung entsteht durch die Wechselwirkung des $\gamma$-Quants mit de
  Die emittierten Photonen müssen nun detektiert und ihre Energie bestimmt werden. Dazu wird ein Energie-sensitiver Detektor, eine Kombination aus Szintillator und Photomultiplier, verwendet.
  \paragraph{Szintillator} Ein Szintillator detektiert Teilchen eines bestimmten Energiebereichs. Es gibt organische und anorganische Szintillatoren, wobei in diesem Versuch anorganische NaI(Tl)-Szintillatoren verwendet werden. Dieser besteht aus einem mit Thallium dotierten NaI-Kristall, in welchem die eintreffenden Photonen ihre Energie durch den Photo- oder Compton-Effekt an Elektronen abgeben. Je höher die Energie der Photonen ist, desto mehr Elektronen werden erzeugt. Diese Elektronen werden nun angeregt und später unter Emission  niederenergetischer Photonen wieder abgeregt. Die Dotierung mit Thallium verhindert, dass die emittierten Elektronen wieder absorbiert werden. Die Bandstruktur, auf der die Funktionsweise eines Szintillators beruht, ist in Abbildung \ref{Szinti} dargestellt.\cite{szinti}
  
- \graX[0.7]{Szinti}{{Funktionsweise eines Szintillators}{Funktionsweise eines Szintillators \label{Szinti} \cite{szinti}}
+ \graX[0.7]{Szinti}{Funktionsweise eines Szintillators}{Funktionsweise eines Szintillators \label{Szinti} \cite{szinti}}
  \paragraph{Photomultiplier}
  Das Licht wird nun vom Szintillator über Lichtleiter zum Photomultiplier geleitet. Dieser wandelt die Lichtimpulse des Szintillators durch den Photoeffekt in elektrische Impulse um, welche proportional zur Lichtintensität sind und verstärkt diese durch Elektronenvervielfachung. Die Funktionsweise eines Photomultipliers ist in Abbildung \ref{Multi} dargestellt.\cite{PM}
  
- \graX[]{photomult}{Funktionsweise eines Photomultipliers}{Funktionsweise eines Photomultipliers \label{Multi} \cite{PM}}
+ \graX{photomult}{Funktionsweise eines Photomultipliers}{Funktionsweise eines Photomultipliers \label{Multi} \cite{PM}}
 
 \subsection{Zerfallsschema von Cobalt}
 
@@ -99,7 +99,7 @@ E_{\gamma} = E_0-2E_R
 
 Die Rückstoßenergie liegt für freie Atome in einem Bereich von ca.  $10^{-3}$eV. Die Verschiebung der Photonenenergie ist damit deutlich größer als die natürliche Linienbreite des Kernübergangs. Demnach kann bei freien Atomen theoretisch Resonanzabsorption nicht beobachtet werden. Allerdings liefert die Dopplerverrbreitung einen Beitrag, der in der Größenordnung der Rückstoßenergie liegt, sodass sich Emissions- und Absorbtionsspektrum im Experiment tatsächlich überlappen und Resonanzabsorption stattfindet (siehe Abbildung \ref{Doppler}).
 
-\graX[]{Doppler}{Dopplerverbreitung}{Dopplerverbreiterung der Emissionsenergie führt zu Überlapp mit Absorbtionspeak und damit zu Resonanzabsorbtion bei Raumtemperatur \label{Doppler}  \cite{jakobs}}
+\graX[]{Doppler}{Dopplerverbreiterung}{Dopplerverbreiterung der Emissionsenergie führt zu Überlapp mit Absorbtionspeak und damit zu Resonanzabsorbtion bei Raumtemperatur \label{Doppler}  \cite{jakobs}}
 
 Zudem kann (z.B. bei tieferen Temperaturen mit geringerer Dopplerverbreiterung) durch Bewegung der Quelle (oder des Absorbers, die Relativgeschwindigkeit ist entscheidend) und daraus folgender Dopplerverschiebung die Verschiebung der Photonenenergie durch die Rückstoßenergie ausgeglichen werden.
 Bei einer Quellengeschwindigkeit/Absorbergeschwindigkeit $v_Q$ ergibt sich für die gesamte Energieverschiebung \footnote{Herleitung siehe} %\cite{jakobs}}:
@@ -117,7 +117,7 @@ Beim Einbau eines Kerns in ein Kristallgitter, wird der Impuls des Rückstoßes 
 Auch hier kann analog zu freien Atomen die Photonenenergie durch gerichtete Bewegung verschoben werden. Bei Messung der Transmissionsrate hinter dem Absorber erwartet man dann einen Einbruch be der relativen Resonanzgeschwindigkeit $v_{res}$ (siehe Abbildung \ref{KILL THE STICKMAN}). Theoretisch liegt diese bei $v_0=0$, da, wie bereits erwähnt, hier die Rückstoßenergie vernachlässigt werden kann. In der Realität beobachtet man eine Verschiebung der Resonanzgeschwindigkeit auf Grund der Isomerie-Verschiebung siehe Abschnitt \ref{Isomerie}.  
 Diesen Effekt bezeichnet man als Mößbauer-Effekt.\cite{jakobs}
 
-\gra[]{Moessbauer_Spektrum}{Moessbauerspektrum}{Moessbauerspektrum oben: Dopplerverschiebung der Energie als Ausgleich zum Rückstoßverlust unten: Transmission hinter dem Absorber in Abhängigkeit der Geschwinidgkeit \label{KILL THE STICKMAN} \cite{jakobs}}
+\graX[]{Moessbauer_Spektrum}{Moessbauerspektrum}{Moessbauerspektrum oben: Dopplerverschiebung der Energie als Ausgleich zum Rückstoßverlust unten: Transmission hinter dem Absorber in Abhängigkeit der Geschwinidgkeit \label{KILL THE STICKMAN} \cite{jakobs}}
 
 \subsection{Gittermodelle}
 
@@ -171,7 +171,7 @@ f\approx \exp\left[ -\frac{E_R}{k\theta_D} \left(\frac{3}{2} + \left(\frac{\pi T
 
 Die Debye-Temperatur von Eisen liegt bei ca. $470 \,\mathrm{K}$. Bei Raumtemperatur ergibt sich somit ein Debye-Waller-Faktor von $f=0.8$, 80\% der Übergänge finden also rückstoßfrei statt. Diese Eigenschaften machen Eisen zu einem guten Mößbauer-Kandidaten. Dies ist auch noch einmal in Abbildung \ref{DWF} dargestellt. Man erkennt deutlich, dass der Debye-Waller-Faktor für Eisen bis über Raumtemperatur hinaus kaum absinkt, der Versuch kann also ungekühlt durchgeführt werden.
 
-\graX{Debye-Waller-Faktor}{{Temperaturabhängigkeit des Debye-Waller-Faktor}{Temperaturabhängigkeit des Debye-Waller-Faktor für Eisen und Rhenium \label{DWF} \cite{jakobs}}
+\graX{Debye-Waller-Faktor}{Temperaturabhängigkeit des Debye-Waller-Faktor}{Temperaturabhängigkeit des Debye-Waller-Faktor für Eisen und Rhenium \label{DWF} \cite{jakobs}}
 
 \subsection{Modifikationen des Übergangsspektrums}
 
@@ -213,6 +213,6 @@ Eingangs direkt an den Ausgang weitergeleitet. Mit einem Schlitzschraubenzieher 
 die Dauer des Gatesignals eingestellt werden. Mit der Delay-Unit können Signale um einige Mikrosekunden verzögert werden und so z.B. unterschiedlich lange Signalwege ausgleichen.
 Die erwarteten Signalformen nach den einzelnen Einheiten sind in Abbildung \ref{Signale}    dargestellt.
 
-\graX[0,7]{Signale}{Erwartete Signalformen nach den einzelnen Einheiten }{Erwartete Signalformen nach den einzelnen Einheiten \label{Signale} \cite{anleitung}}
+\graX[0.7]{Signale}{Erwartete Signalformen nach den einzelnen Einheiten }{Erwartete Signalformen nach den einzelnen Einheiten \label{Signale} \cite{anleitung}}
 
 An einem Oszilloskop werden diese Signalformen während des Aufbaus des Versuches überprüft (siehe Kapitel \ref{Aufbau}).
