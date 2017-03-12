@@ -27,7 +27,7 @@ an die Messdaten gelegt, wobei $A\cdot e^{-\lambda d}$ den Beitrag des Compton-U
 	r_\text{Untergrund}&=r(0)=A\cdot e^{-\lambda 0}=A\text{ .}\label{eq:dexpfit}
 \end{align}
 
-\gra[1]{compton-untergrund}{Messung der Transmission durch Aluminium in Abhängigkeit der Schichtdicke zur Bestimmung des Compton-Untergrunds\label{fig:comptonuntergrund}}
+\graX[1]{compton-untergrund}{Messung zur Bestimmung des Compton-Untergrunds}{Messung der Transmission durch Aluminium in Abhängigkeit der Schichtdicke zur Bestimmung des Compton-Untergrunds\label{fig:comptonuntergrund}}
 
 Wir erhalten nun bei der Messung die in Abbildung \ref{fig:comptonuntergrund} dargestellten Messdaten. Die $y$-Fehler wurden aus den Poissonfehlern der Zählmessung berechnet: $s_r=r\cdot\frac{s_\text{Counts}}{\mathrm{Counts}}$. Für die Messung der Schichtdicken wurde ein Fehler von $s_{d,i}=0,1\,\si{mm}$ für eine Aluminiumplatte und damit $s=\sqrt{m}\cdot s_{d,i}$ mit der Anzahl $m$ der jeweils verwendeten Aluminiumplatten. Bei der Durchführung des Fits an Gleichung \ref{eq:dexpfit} erhalten wir folgende Parameter:
 
@@ -107,9 +107,35 @@ Als zweite Möglichkeit zur Berechnung der natürlichen Linienbreite lässt sich
 \begin{align}
 	T_A&=f_An_A\beta\sigma_0d_A=6,1\pm0,7\text{ .}
 \end{align}
-Dabei ist $f_A$ der Debye-Waller-Faktor, $n_A$ die Teilchendichte, $d_A$ die Dicke des Absorbers, $\beta$ der Anteil von $^{57}\mathrm{Fe}$ im Isotopengemisch und $\sigma_0=2\pi\lambdabar^2\cdot\frac{2I^*+1}{2I+1}\cdot\frac1{1+\alpha}$ der Wirkungsquerschnitt.
-\subsubsection{Debye-Waller-Faktor}
+Dabei ist $f_A$ der Debye-Waller-Faktor, $n_A$ die Teilchendichte, $d_A$ die Dicke des Absorbers, $\beta$ der Anteil von $^{57}\mathrm{Fe}$ im Isotopengemisch und $\sigma_0=2\pi\lambdabar^2\cdot\frac{2I^*+1}{2I+1}\cdot\frac1{1+\alpha}$ der Wirkungsquerschnitt.\\
 
+\graX{linienverbreiterung}{Relative Linienverbreiterung}{Relative Linienverbreiterung in Abhängigkeit der effektiven Absorberdicke\label{verbreiterung} (Quelle: \cite{frauenfelder})}
+
+Aus dem Fit erhalten wir \begin{align}\gamma_\mathrm{Lorentz}=0,60\pm0,04\,\si{mms^{-1}}\end{align} und mit Hilfe von Gleichung \ref{vtoE} erhalten wir \begin{align}\Gamma'=29\pm2\,\si{neV}\text{ .}\end{align} Mit Hilfe von Abbildung \ref{verbreiterung} kann nun die relative Verbreiterung \begin{align}W=\frac{\Gamma_0}{2\Gamma'}=1.78\pm0.06\end{align} graphisch bestimmt werden. Für die natürliche Linienbreite, die Lebensdauer und die Halbwertszeit erhalten wir damit folgende Ergebnisse:
+\begin{align}
+	\Gamma&=\frac{\Gamma_0}{2W}=(8.1\pm0.6)\,\si{neV}\\
+	\tau&=(81\pm6)\,\si{ns}\\
+	T_{\frac12}&=(56\pm4)\,\si{ns}
+\end{align}
+\subsubsection{Debye-Waller-Faktor}
+Der Debye-Waller-Faktor der Quelle berechnet sich mit folgender Gleichung:
+\begin{align}
+	f_Q&=\frac{Z_\infty-Z_\mu}{Z_\infty}\cdot\frac1{1-\exp(-\frac{T_A}2)\cdot J_0\left(\mathrm{i}\frac{T_A}2\right)}\text{ ,}
+\end{align}
+wobei $J_0$ eine Besselfunktion bezeichnet. Außerdem gilt:
+\begin{align}
+	Z_\infty&=r_\mathrm{Voigt}(\infty)=(12,84\pm0,08)\,\mathrm{s^{-1}}\text{ ,}\\
+	Z_\mu&=r_\mathrm{Voigt}(\mu)=(9,06\pm0,10)\,\mathrm{s^{-1}}\text{ .}
+\end{align}
+Damit gilt:
+\begin{align}
+	f_Q&=0,388\pm0,014\text{ .}
+\end{align}
+Der Fehler berechnet sich dabei mit Hilfe von Gauß'scher Fehlerrechnung folgendermaßen:
+\begin{align}
+	s_{f_Q}&=\sqrt{\left(\del[f_Q]{Z_\infty}\cdot s_{Z_\infty}\right)^2+\left(\del[f_Q]{Z_\mu}\cdot s_{Z_\mu}\right)^2+\left(\del[f_Q]{T_A}\cdot s_{T_A}\right)^2}\\
+	&=f_Q\sqrt{\frac{\left(\frac{Z_\mu}{Z_\infty^2}\right)^2s_{Z_\infty}^2+\left(\frac{1}{Z_\infty}\right)^2s_{Z_\mu}^2}{\frac{Z_\infty-Z_\mu}{Z_\infty}}+\left(\frac{\frac12\exp(-\frac{T_A}{2})\left(\mathrm{i}J_{-1}\left(\mathrm{i}\frac{T_A}2\right)-J_{0}\left(\mathrm{i}\frac{T_A}2\right)\right)}{1-\exp(-\frac{T_A}2)\cdot J_0\left(\mathrm{i}\frac{T_A}2\right)}\right)^2s_{T_A}^2}\text{ .}
+\end{align}
 
 
 \subsection{Sechslinienabsorber}
@@ -144,7 +170,7 @@ gefittet. Die hierbei erhaltenen Fitparameter sind in den Tabellen \ref{tab:sech
 		C&=(12,38\pm0,04)\,\si{s^{-1}}\\
 		\frac{\chi^2}{\mathrm{ndf}}&=0,38
 	\end{align*}
-	\caption{Fitdaten des sechsfachen Gaußfits aus Abbildung \ref{fig:sechslinien} (siehe Gleichung \ref{eq:sechsgaus})}
+	\caption[Fitdaten des sechsfachen Gaußfits]{Fitdaten des sechsfachen Gaußfits aus Abbildung \ref{fig:sechslinien} (siehe Gleichung \ref{eq:sechsgaus})}
 	\label{tab:sechsgaus}
 \end{table}
 
@@ -163,7 +189,7 @@ gefittet. Die hierbei erhaltenen Fitparameter sind in den Tabellen \ref{tab:sech
 	D&=(12,61\pm0,06)\,\si{s^{-1}}\\
 	\frac{\chi^2}{\mathrm{ndf}}&=0,39
 	\end{align*}
-	\caption{Fitdaten des sechsfachen Lorentzfits aus Abbildung \ref{fig:sechslinien} (siehe Gleichung \ref{eq:sechslorentz})}
+	\caption[Fitdaten des sechsfachen Lorentzfits]{Fitdaten des sechsfachen Lorentzfits aus Abbildung \ref{fig:sechslinien} (siehe Gleichung \ref{eq:sechslorentz})}
 	\label{tab:sechslorentz}
 \end{table}
 
@@ -182,6 +208,80 @@ gefittet. Die hierbei erhaltenen Fitparameter sind in den Tabellen \ref{tab:sech
 		C&=(12,41\pm0,07)\,\si{s^{-1}}\\
 		\frac{\chi^2}{\mathrm{ndf}}&=0,37
 	\end{align*}
-	\caption{Fitdaten des sechsfachen Voigtfits aus Abbildung \ref{fig:sechslinien} (siehe Gleichung \ref{eq:sechsvoigt})}
+	\caption[Fitdaten des sechsfachen Voigtfits]{Fitdaten des sechsfachen Voigtfits aus Abbildung \ref{fig:sechslinien} (siehe Gleichung \ref{eq:sechsvoigt})}
 	\label{tab:sechsvoigt}
 \end{table}
+\clearpage
+\subsubsection{Hyperfeinaufspaltung}
+Wie in Abschnitt \ref{hyperfein} beschrieben, erlaubt die Hyperfeinstrukturaufpaltung sechs Übergänge vom angeregten Zustand in den Grundzustand. Diese können wie in Tabelle \ref{tab:hyperfein} beschrieben den Peaks zugeordnet werden.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c|cccccc}
+		$i$&1&2&3&4&5&6\\\hline
+		$m_a$&$\frac32$&$\frac12$&$-\frac12$&$\frac12$&$-\frac12$&$-\frac32$\\\hline
+		$m_g$&$\frac12$&$\frac12$&$\frac12$&$-\frac12$&$-\frac12$&$-\frac12$
+	\end{tabular}
+	\caption[Magnetische Quantenzahlen der Hyperfeinaufspaltung von $^{57}$Fe]{Magnetische Quantenzahlen der Hyperfeinaufspaltung von $^{57}$Fe. Die Quantenzahl des Grundzustands ist $m_g$ und $m_a$ die Quantenzahl des angeregten Zustands.}
+	\label{tab:hyperfein}
+\end{table}
+
+Aus den magnetischen Momenten $\mu_a$ und $\mu_g$ lässt sich nun für jeden Peak mit Gleichung \ref{eq:hyperfein} die theoretische Aufspaltungsenergie $E_i$ berechnen:
+\begin{align}
+	E_1&=(\mu_a-\mu_g)B=-E_6\label{eq:hyperfein1}\\
+	E_2&=(\frac13\mu_a-\mu_g)B=-E_5\label{eq:hyperfein2}\\
+	E_3&=(-\frac13\mu_a-\mu_g)B=-E_4\label{eq:hyperfein3}
+\end{align}
+
+\subsubsection{Isomerieverschiebung}
+Aus den Gleichungen \ref{eq:hyperfein1} bis \ref{eq:hyperfein3} lässt sich die in Abschnitt \ref{Isomerie} beschriebene Isomerieverschiebung bestimmen. Aus dem Voigt-Fit in Abschnitt \ref{einlinien} wird die Position $\mu$ der Peaks abgelesen und mit Hilfe von Gleichung \ref{vtoE} in Energien umgerechnet. Anschließend wird daraus der Nullpunkt für jedes Energiepaar und danach der Mittelwert aus den drei erhaltenen Werten berechnet. Daraus erhalten wir für die Isomerieverschiebung:
+\begin{align}
+E_\mathrm{iso}&=(6,7\pm0,9)\,\si{neV}\text{ .}
+\end{align}
+
+Die $E_i$ berechnen sich nun durch
+\begin{align}
+	E_i&=E_{i,\text{mess}}-E_\text{iso}\text{ .}
+\end{align}
+
+\subsubsection{Magnetisches Moment}
+Das magnetische Moment des Grundzustands ist gegeben durch \cite{schatz}:
+\begin{align}
+	\mu_g&=(0.090604\pm0.000009)\,\mu_N\text{ ,}
+\end{align}
+mit dem Kernmagneton $\mu_N=\frac{e\hbar}{2m_\text{Proton}}$.\\
+
+Aus den Gleichungen \ref{eq:hyperfein1} bis \ref{eq:hyperfein3} ergeben sich die folgenden Verhältnisse:
+\begin{align}
+	\frac{E_2}{E_3}&=\frac{E_5}{E_4}=\frac{\frac13\mu_a-\mu_g}{-\frac13\mu_a-\mu_g}\label{eq:}\\
+	\frac{E_1}{E_3}&=\frac{E_6}{E_4}=\frac{\mu_a-\mu_g}{-\frac13\mu_a-\mu_g}\\
+	\frac{E_1}{E_2}&=\frac{E_6}{E_5}=\frac{\mu_a-\mu_g}{\frac13\mu_a-\mu_g}\text{ .}
+\end{align}
+Daraus ergeben sich folgende Gleichungen für das magnetische Moment des angeregten Zustands:
+\begin{align}
+	\mu_a&	=3\mu_g\left(\frac{1-\frac{E_2}{E_3}}{1+\frac{E_2}{E_3}}\right)
+			=3\mu_g\left(\frac{1-\frac{E_5}{E_4}}{1+\frac{E_5}{E_4}}\right)\\
+	\mu_a&	=\mu_g\left(\frac{1-\frac{E_1}{E_3}}{1+\frac13\frac{E_1}{E_3}}\right)
+			=\mu_g\left(\frac{1-\frac{E_6}{E_4}}{1+\frac13\frac{E_6}{E_4}}\right)\\
+	\mu_a&	=\mu_g\left(\frac{-1+\frac{E_1}{E_2}}{-1+\frac13\frac{E_1}{E_2}}\right)
+			=\mu_g\left(\frac{-1+\frac{E_6}{E_5}}{-1+\frac13\frac{E_6}{E_5}}\right)\text{ .}
+\end{align}
+Aus dem Mittelwert der einzelnen Ergebnisse ergibt sich als Ergebnis für das magnetische Moment:
+\begin{align}
+	\mu_a&=(-0,157\pm0,004)\,\mu_N\text{ .}
+\end{align}
+\subsubsection{Magnetische Feldstärke}
+Aus den Gleichungen \ref{eq:hyperfein1} bis \ref{eq:hyperfein3} ergeben sich folgende Formeln für die magnetische Feldstärke am Kernort:
+\begin{align}
+	B_1&=\frac{E_1}{\mu_a-\mu_g}=(33,1\pm0,6)\,\si{T}&
+	B_6&=\frac{E_6}{\mu_g-\mu_a}=(32,7\pm0,6)\,\si{T}\\
+	B_2&=\frac{E_2}{\frac13\mu_a-\mu_g}=(33,1\pm0,5)\,\si{T}&
+	B_5&=\frac{E_5}{\mu_g-\frac13\mu_a}=(33,1\pm0,7)\,\si{T}\\
+	B_3&=\frac{E_3}{\frac13\mu_a+\mu_g}=(26\pm3)\,\si{T}&
+	B_4&=\frac{E_4}{\mu_g+\frac13\mu_a}=(33\pm3)\,\si{T}
+	\text{ .}
+\end{align}
+Aus dem Mittelwert ergibt sich hiermit folgendes Magnetfeld am Kernort:
+\begin{align}
+	B&=(32,9\pm0,3)\,\si{T}\text{ .}
+\end{align}
