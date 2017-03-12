@@ -1,16 +1,59 @@
 \section{Auswertung}
 
+Zur Auswertung wurde die Programmiersprache R verwendet.
 \subsection{Energieeichung des MCA}
 
+Zur Identifizierung des $14,4\,\mathrm{keV}$-Peaks von Eisen wird eine Energieeichung an Hand der bekannten Peaks verschiedener Elemente, wie in REFAUFBAU beschrieben, durchgeführt. An die beobachteten Peaks werden Gaußfunktionen folgender Form gefittet:
 
+\begin{align}
+	r_\mathrm{Gauss}(x)&=C+\frac{N}{\sqrt{2\pi}\sigma}\exp(-\frac{(x-\mu)^2}{2\sigma^2})\text{ .}
+\end{align}
+
+Ein beispielhafter Fit ist in Abildung \ref{Beispiel} für die $K_\alpha$-Linien von Silber dargestellt.
 
 \gra{AgEichung}{Beispielhafte Auswertung der $\mathrm{K}_\alpha$-Linie von Silber \label{Beispiel}}
 
+Bei einigen Spektren überlappen sich die Peaks, sodass hier doppelte Gaußfits gefittet wurden. Dies ist beispielhaft in Abbildung \ref{DoppelGauss} für Terbium dargestellt. Die Spektren der restlichen Elemente mit zugehörigen Fits sowie der Code in R sind im Anhang REF zu finden.
+
 \gra{TbEichung}{Doppel-Gaußfit zur Auswertung der $\mathrm{K}_\alpha$-Linie von Terbium \label{DoppelGauss} }
+
+Die Fitparameter der einzelnen Peaks, die für die Energieeichung verwendet wurden, sind in \ref{tab:eichung} aufgestellt.
+
+\begin{table}
+	\centering
+	\begin{tabular}{l|ccccc}
+		Material&$C\,/\,\si{Counts}$&$N\,/\,\si{(Counts\cdot Channels)}$&$\mu\,/\,\si{Channels}$&$\sigma\,/\,\si{Channels}$&$\frac{\chi^2}{\mathrm{ndf}}$\\\hline
+		Ba&$2369\pm4$&$\pm$&$418,56\pm0,12$&$38,4\pm1,4$&$1,84$\\
+		Ag&$733\pm4$&$\pm$&$301,7\pm0,4$&$32,8\pm0,4$&$208,9$\\
+		Mo&$682\pm24$&$\pm$&$237,8\pm0,2$&$26,5\pm 0,2$&$23,4$\\
+		Rb&$204\pm11$&$\pm$&$178,96\pm0,16$&$21,86\pm0,18$&$8\pm5$\\
+		Tb&$992\pm11$&$\pm$&$588,5\pm0,3$&$47,11\pm0,17$&$9,39$\\
+	\end{tabular}
+	\caption{Fitdaten der Gaußfits zur Eichung}
+	\label{tab:eichung}
+\end{table}
+
+Relevant für die Energieeichung ist dabei der Mittelwert, der die Energie des Peaks, die der Anleitung entnommen wird, dem Kanal zuordnet. Als Fehler wird sinnvoller Weise die halbe Standardabweichung gewählt und nicht der Fehler auf den Fitparameter, da dieser nicht dem statistischen Fehler entspricht. Die Werte, die direkt als Punkte für die Eichgerade verwendet wurden, sind in Tabelle \ref{tab:eichung1} dargestellt. 
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l|cc}
+		Material&$\mu\,/\,\si{Channels}$&Energie$\,/\,\si{keV}$\\\hline
+		Ba&$418,56\pm19$&$32,06$\\
+		Ag&$301,7\pm16$&$22,10$\\
+		Mo&$237,8\pm13$&$17,44$\\
+		Rb&$178,96\pm11$&$13,37$\\
+		Tb&$588,5\pm24$&$44,2$\\
+	\end{tabular}
+	\caption{Fitdaten der Gaußfits zur Eichung}
+	\label{tab:eichung1}
+\end{table}
+
 
 In Abbildung \ref{LFEichung} sind die einzelnen Kanäle gegen die bekannten Energien aufgetragen, wobei die halbe Standardabweichung als y-Fehler aufgetragen wurden. Innerhalb dieses Fehlers liegen alle Punkte auf der Eichgeraden, sodass sich nun leicht die erwartete Position des Eisenpeaks ablesen lässt.
 
 \gra{Eichung}{Linearer Fit zur Energiekalibrierung des MCA \label{LFEichung}}
+
+ Die Position des $14,4\,\mathrm{keV}$-Eisenpeak ergibt sich an Hand von \ref{LFEichung} damit zu $195\pm 7$, wobei sich der Fehler mit Gauß'scher Fehlerfortpflanzung aus den Fehlern auf die Fitparameter ergibt.
 
 
 \subsection{Berechnung des Compton-Untergrunds}
