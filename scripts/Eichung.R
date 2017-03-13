@@ -1,3 +1,4 @@
+setwd("C:\\Users\\Saskia\\Documents\\Physik\\FP\\fp2-moessbauer\\scripts")
 source("readFiles.R")
 source("functions.R")
 source("gausfit1.R")
