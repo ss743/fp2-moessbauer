@@ -75,7 +75,7 @@ GAMMA0=roundfunc(toenergy(c(fL,sfL)))
 
 W=c(1.78,0.06)
 GAMMA=c()
-GAMMA[1]=GAMMA0[1]/2/W[1]
+GAMMA[1]=GAMMA0[1]/4/W[1]
 GAMMA[2]=GAMMA[1]*sqrt((GAMMA0[2]/GAMMA0[1])^2+(W[2]/W[1])^2)
 
 #GAMMA=roundfunc(toenergy(c(fl,sfl)))

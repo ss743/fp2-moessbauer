@@ -1,19 +1,19 @@
 \section{Auswertung}
 
-Zur Auswertung wurde die Programmiersprache R verwendet.
+Zur Auswertung wurde die Programmiersprache R verwendet. Die Skripte zur Auswertung sind im Anhang unter Abschnitt \ref{code} zu finden.
 \subsection{Energieeichung des MCA}
 
-Zur Identifizierung des $14,4\,\mathrm{keV}$-Peaks von Eisen wird eine Energieeichung an Hand der bekannten Peaks verschiedener Elemente, wie in REFAUFBAU beschrieben, durchgeführt. An die beobachteten Peaks werden Gaußfunktionen folgender Form gefittet:
+Zur Identifizierung des $14,4\,\mathrm{keV}$-Peaks von Eisen wird eine Energieeichung an Hand der bekannten Peaks verschiedener Elemente, wie in \ref{Aufbau} beschrieben, durchgeführt. An die beobachteten Peaks werden Gaußfunktionen folgender Form gefittet:
 
 \begin{align}
 	r_\mathrm{Gauss}(x)&=C+\frac{N}{\sqrt{2\pi}\sigma}\exp(-\frac{(x-\mu)^2}{2\sigma^2})\text{ .}
 \end{align}
 
-Ein beispielhafter Fit ist in Abildung \ref{Beispiel} für die $K_\alpha$-Linien von Silber dargestellt.
+Ein beispielhafter Fit ist in Abbildung \ref{Beispiel} für die $K_\alpha$-Linien von Silber dargestellt.
 
 \gra{AgEichung}{Beispielhafte Auswertung der $\mathrm{K}_\alpha$-Linie von Silber \label{Beispiel}}
 
-Bei einigen Spektren überlappen sich die Peaks, sodass hier doppelte Gaußfits gefittet wurden. Dies ist beispielhaft in Abbildung \ref{DoppelGauss} für Terbium dargestellt. Die Spektren der restlichen Elemente mit zugehörigen Fits sowie der Code in R sind im Anhang REF zu finden.
+Bei einigen Spektren überlappen sich die Peaks, sodass hier doppelte Gaußfits gefittet wurden. Dies ist beispielhaft in Abbildung \ref{DoppelGauss} für Terbium dargestellt. Die Spektren der restlichen Elemente mit zugehörigen Fits sowie der Code in R sind im Anhang unter Abschnitt \ref{spektren} und \ref{code} zu finden.
 
 \gra{TbEichung}{Doppel-Gaußfit zur Auswertung der $\mathrm{K}_\alpha$-Linie von Terbium \label{DoppelGauss} }
 
@@ -22,12 +22,12 @@ Die Fitparameter der einzelnen Peaks, die für die Energieeichung verwendet wurd
 \begin{table}
 	\centering
 	\begin{tabular}{l|ccccc}
-		Material&$C\,/\,\si{Counts}$&$N\,/\,\si{(Counts\cdot Channels)}$&$\mu\,/\,\si{Channels}$&$\sigma\,/\,\si{Channels}$&$\frac{\chi^2}{\mathrm{ndf}}$\\\hline
-		Ba&$2369\pm4$&$\pm$&$418,56\pm0,12$&$38,4\pm1,4$&$1,84$\\
-		Ag&$733\pm4$&$\pm$&$301,7\pm0,4$&$32,8\pm0,4$&$208,9$\\
-		Mo&$682\pm24$&$\pm$&$237,8\pm0,2$&$26,5\pm 0,2$&$23,4$\\
-		Rb&$204\pm11$&$\pm$&$178,96\pm0,16$&$21,86\pm0,18$&$8\pm5$\\
-		Tb&$992\pm11$&$\pm$&$588,5\pm0,3$&$47,11\pm0,17$&$9,39$\\
+		Material&$C\,/\,\si{Counts}$&$N\,/\,\cdot10^6\,\si{(Counts\cdot Channels)}$&$\mu\,/\,\si{Channels}$&$\sigma\,/\,\si{Channels}$&$\frac{\chi^2}{\mathrm{ndf}}$\\\hline
+		Ba&$2369\pm4$&$2,714\pm0,011$&$418,56\pm0,12$&$38,4\pm1,4$&$1,84$\\
+		Ag&$733\pm4$&$1,64\pm0,02$&$301,7\pm0,4$&$32,8\pm0,4$&$208,9$\\
+		Mo&$682\pm24$&$0,545\pm0,005$&$237,8\pm0,2$&$26,5\pm 0,2$&$23,4$\\
+		Rb&$204\pm11$&$0,246\pm0,003$&$178,96\pm0,16$&$21,86\pm0,18$&$8\pm5$\\
+		Tb&$992\pm11$&$2,541\pm0,018$&$588,5\pm0,3$&$47,11\pm0,17$&$9,39$\\
 	\end{tabular}
 	\caption{Fitdaten der Gaußfits zur Eichung}
 	\label{tab:eichung}
@@ -85,22 +85,28 @@ Wir erhalten nun bei der Messung die in Abbildung \ref{fig:comptonuntergrund} da
 
 Daraus erhalten wir nun als Ergebnis für den Compton-Untergrund:
 \begin{align}
-	r_\text{Untergrund}&=18,5\pm0,3\,\si{s^{-1}}\text{ .}
+	r_\text{Untergrund}&=(18,5\pm0,3)\,\si{s^{-1}}\text{ .}
 \end{align}
+
+Für die Berechnung des Compton-Untergrunds wurde das in Anhang \ref{code} angehängte Skript \code{Compton-} \code{Untergrund.R} verwendet.
 
 \subsection{Abschwächung durch Plexiglas}
 
-Die Absorberproben liegen in Plexiglashalterungen vor. Da das Plexiglas die $\gamma$-Strahlung abschwächt, muss zur Korrektur der Messdaten die Abschwächung durch das Plexiglas berechnet werden. Hierzu liegt eine leere Plexiglashalterung vor, mit welcher eine Messung der Zählraten der Quelle durchgeführt wird. Diese Messung wird ebenso ohne Plexiglashalterung durchgeführt. Aus diesen beiden Messungen wird nun das Verhältnis zwischen der Zählrate mit und ohne Plexiglas und daraus der Korrekturfaktor $k_\text{Plexi}$ bestimmt.\\
+Die Absorberproben liegen in Plexiglashalterungen vor. Da das Plexiglas die $\gamma$-Strahlung abschwächt, muss zur Korrektur der Messdaten die Abschwächung durch das Plexiglas berechnet werden. Hierzu liegt eine leere Plexiglashalterung vor, mit welcher eine Messung der Zählraten der Quelle durchgeführt wird. Diese Messung wird ebenso ohne Plexiglashalterung durchgeführt. Aus diesen beiden Messungen wird nun das Verhältnis zwischen der Zählrate mit und ohne Plexiglas und daraus der Korrekturfaktor $k_\text{Plexi}$ bestimmt. Dazu wurde das Skript \code{Plexiglas.R} aus Anhang \ref{code} verwendet.\\
 
-Dabei wurde folgendes Messergebnis erzielt:
+Dabei wurde folgendes Ergebnis erzielt:
 \begin{align}
 	k_\text{Plexi}=\frac{r_\text{leer}}{r_\text{plexi}}&=1,243\pm0,010\text{ .}
 \end{align}
 
-\subsection{Energieumrechnung}
+\subsection{Umrechnung der Messwerte}
 Die Geschwindigkeiten werden mit Hilfe der folgenden Formel in Energien umgerechnet:
 \begin{align}
 	E=E_0\frac{v}{c}\text{ .}\label{vtoE}
+\end{align}
+Aus den gemessenen Zählraten werden mit Hilfe des Abschwächungsfaktors und des Compton-Untergrunds die tatsächlichen Transmissionsraten bestimmt:
+\begin{align}
+	r&=k_\mathrm{Plexi}\cdot r_\mathrm{Mess}-r_\mathrm{Untergrund}\text{ .}
 \end{align}
 
 \subsection{Einlinienabsorber}\label{einlinien}
@@ -128,13 +134,15 @@ gefittet. Dabei wurden folgende Fitparameter ermittelt:
 	\\&\frac{\chi^2}{\mathrm{ndf}}=0,55&&\frac{\chi^2}{\mathrm{ndf}}=0,56&&\frac{\chi^2}{\mathrm{ndf}}=0,55
 \end{align*}
 
+Zur Auswertung des Einlinienabsorbers wurden die Skripte \code{Einlinien.R}, \code{Absorberdicke.R} und \code{Debye-Waller.R} verwendet (siehe Anhang \ref{code}).
+
 \subsubsection{Isomerieverschiebung}
 Die in Abschnitt \ref{Isomerie} beschriebene Isomerieverschiebung kann aus der Position des Peaks bestimmt werden. Die Isomerieverschiebung wird durch die Abweichung des Peaks von der Energie $E_0$, also der Geschwindigkeit $v_0=0$ bestimmt. Aus dem Voigt-Fit in Abschnitt \ref{einlinien} wird die Position $\mu$ des Peaks abgelesen und mit Hilfe von Gleichung \ref{vtoE} in Energie umgerechnet. Daraus erhalten wir für die Isomerieverschiebung:
 \begin{align}
 	E_\mathrm{iso}&=E_0\frac{\mu}{c}=(9,7\pm0,9)\,\si{neV}
 \end{align}
 \subsubsection{Linienbreite und Lebensdauer}
-Die gemessene Linienbreite ergibt sich aus der natürlichen Linienbreite, welche gemessen werden soll und der relativen Linienverbreiterung durch den endlich dicken Absorber. Die natürliche Linienbreite lässt sich durch eine Lorentz-Funktion, die relative Linienverbreiterung durch die Faltung einer Gauß-Funktion an der Lorentz-Funktion beschreiben (siehe Abschnitt \ref{lebensdauer}). Die Faltung der Lorentz- und der Gauß-Funktion ergibt eine Voigt-Funktion, welche an die Daten gefittet wurde.
+Die gemessene Linienbreite ergibt sich aus der zu messenden natürlichen Linienbreite und der relativen Linienverbreiterung durch den endlich dicken Absorber. Die natürliche Linienbreite lässt sich durch eine Lorentz-Funktion, die relative Linienverbreiterung durch die Faltung einer Gauß-Funktion an der Lorentz-Funktion beschreiben (siehe Abschnitt \ref{lebensdauer}). Die Faltung der Lorentz- und der Gauß-Funktion ergibt eine Voigt-Funktion, welche an die Daten gefittet wurde.
 \paragraph{Berechnung aus dem Lorentz-Anteil des Voigt-Fits}
 Zunächst wird zum Berechnen der natürlichen Linienbreite $\Gamma$ der Lorentz-Anteil des Voigt-Fits verwendet. Dieser ergibt sich aus dem Fit-Parameter $\gamma$ des Voigt-Fits. Die natürliche Linienbreite $\Gamma$ berechnet sich nun mit Hilfe der Energieumrechnung in Gleichung \ref{vtoE} folgendermaßen:
 \begin{align}
@@ -154,11 +162,11 @@ Dabei ist $f_A$ der Debye-Waller-Faktor, $n_A$ die Teilchendichte, $d_A$ die Dic
 
 \graX{linienverbreiterung}{Relative Linienverbreiterung}{Relative Linienverbreiterung in Abhängigkeit der effektiven Absorberdicke\label{verbreiterung} (Quelle: \cite{frauenfelder})}
 
-Aus dem Fit erhalten wir \begin{align}\gamma_\mathrm{Lorentz}=0,60\pm0,04\,\si{mms^{-1}}\end{align} und mit Hilfe von Gleichung \ref{vtoE} erhalten wir \begin{align}\Gamma'=29\pm2\,\si{neV}\text{ .}\end{align} Mit Hilfe von Abbildung \ref{verbreiterung} kann nun die relative Verbreiterung \begin{align}W=\frac{\Gamma_0}{2\Gamma'}=1.78\pm0.06\end{align} graphisch bestimmt werden. Für die natürliche Linienbreite, die Lebensdauer und die Halbwertszeit erhalten wir damit folgende Ergebnisse:
+Aus dem Fit erhalten wir \begin{align}\gamma_\mathrm{Lorentz}=0,60\pm0,04\,\si{mms^{-1}}\end{align} und mit Hilfe von Gleichung \ref{vtoE} erhalten wir \begin{align}\Gamma_0=29\pm2\,\si{neV}\text{ .}\end{align} Mit Hilfe von Abbildung \ref{verbreiterung} kann nun die relative Verbreiterung \begin{align}W=\frac{\Gamma_0}{2\Gamma}=1.78\pm0.06\end{align} graphisch bestimmt werden. Da zusätzlich zur Absorberdicke auch die Quelldicke berücksichtigt werden muss, wird die relative Verbreiterung folgendermaßen berechnet::
 \begin{align}
-	\Gamma&=\frac{\Gamma_0}{2W}=(8.1\pm0.6)\,\si{neV}\\
-	\tau&=(81\pm6)\,\si{ns}\\
-	T_{\frac12}&=(56\pm4)\,\si{ns}
+	\Gamma&=\frac{\Gamma_0}{4W}=(4.1\pm0.3)\,\si{neV}\\
+	\tau&=(162\pm12)\,\si{ns}\\
+	T_{\frac12}&=(112\pm9)\,\si{ns}
 \end{align}
 \subsubsection{Debye-Waller-Faktor}
 Der Debye-Waller-Faktor der Quelle berechnet sich mit folgender Gleichung:
@@ -196,7 +204,7 @@ und anschließend eine sechsfache Voigtfunktion
 \begin{align}
 r_\mathrm{Voigt}^{n=6}(v)&=\sum_{i=1}^n\left(r_{\mathrm{Gauss}, i}*r_{\mathrm{Lorentz}, i}\right)(v)\label{eq:sechsvoigt}
 \end{align}
-gefittet. Die hierbei erhaltenen Fitparameter sind in den Tabellen \ref{tab:sechsgaus} bis \ref{tab:sechsvoigt} aufgeführt.
+gefittet. Die hierbei erhaltenen Fitparameter sind in den Tabellen \ref{tab:sechsgaus} bis \ref{tab:sechsvoigt} aufgeführt.\\
 
 \begin{table}[h!]
 	\centering
@@ -254,6 +262,7 @@ gefittet. Die hierbei erhaltenen Fitparameter sind in den Tabellen \ref{tab:sech
 	\caption[Fitdaten des sechsfachen Voigtfits]{Fitdaten des sechsfachen Voigtfits aus Abbildung \ref{fig:sechslinien} (siehe Gleichung \ref{eq:sechsvoigt})}
 	\label{tab:sechsvoigt}
 \end{table}
+Die Auswertung des Sechslinienabsorbers wurde mit dem Skript \code{Sechslinien.R} in Anhang \ref{code} durchgeführt.
 \clearpage
 \subsubsection{Hyperfeinaufspaltung}
 Wie in Abschnitt \ref{hyperfein} beschrieben, erlaubt die Hyperfeinstrukturaufpaltung sechs Übergänge vom angeregten Zustand in den Grundzustand. Diese können wie in Tabelle \ref{tab:hyperfein} beschrieben den Peaks zugeordnet werden.
